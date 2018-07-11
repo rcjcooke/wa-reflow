@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.0">
+<eagle version="9.1.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8,20 +8,20 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
-<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,12 +39,12 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -10270,102 +10270,6 @@ Source: http://cache.national.com/ds/LM/LM2574.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="reflow-oven">
-<packages>
-<package name="IND_ELC11D">
-<pad name="1" x="-2.9972" y="0" drill="1.143" diameter="1.651" shape="square"/>
-<pad name="2" x="0" y="0" drill="1.143" diameter="1.651" rot="R180"/>
-<wire x1="1.9812" y1="0" x2="-4.9784" y2="0" width="0.1524" layer="21" curve="-180"/>
-<wire x1="-4.9784" y1="0" x2="1.9812" y2="0" width="0.1524" layer="21" curve="-180"/>
-<wire x1="1.8542" y1="0" x2="-4.8514" y2="0" width="0" layer="51" curve="-180"/>
-<wire x1="-4.8514" y1="0" x2="1.8542" y2="0" width="0" layer="51" curve="-180"/>
-<text x="-4.7752" y="-0.635" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
-</package>
-<package name="CAP_5_X_11">
-<pad name="1" x="-4.9784" y="0" drill="0.762" diameter="1.27" shape="square"/>
-<pad name="2" x="0" y="0" drill="0.762" diameter="1.27" rot="R180"/>
-<wire x1="-7.1374" y1="0" x2="-5.9436" y2="0" width="0.1524" layer="21"/>
-<wire x1="-6.5024" y1="0.635" x2="-6.5024" y2="-0.635" width="0.1524" layer="21"/>
-<wire x1="-4.9276" y1="0.9652" x2="-0.0508" y2="0.9652" width="0.1524" layer="21" curve="-136"/>
-<wire x1="-0.0508" y1="-0.9652" x2="-4.9276" y2="-0.9652" width="0.1524" layer="21" curve="-136"/>
-<wire x1="-7.1374" y1="0" x2="-5.8674" y2="0" width="0.1524" layer="51"/>
-<wire x1="-6.5024" y1="0.635" x2="-6.5024" y2="-0.635" width="0.1524" layer="51"/>
-<wire x1="0" y1="0" x2="-4.9784" y2="0" width="0" layer="51" curve="-180"/>
-<wire x1="-4.9784" y1="0" x2="0" y2="0" width="0" layer="51" curve="-180"/>
-<text x="-5.7658" y="-0.635" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
-</package>
-</packages>
-<symbols>
-<symbol name="IND">
-<pin name="1" x="15.24" y="0" visible="off" length="short" direction="pas" rot="R180"/>
-<pin name="2" x="0" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-<wire x1="5.08" y1="0" x2="5.08" y2="1.27" width="0.2032" layer="94"/>
-<wire x1="7.62" y1="0" x2="7.62" y2="1.27" width="0.2032" layer="94"/>
-<wire x1="12.7" y1="0" x2="12.7" y2="1.27" width="0.2032" layer="94"/>
-<wire x1="2.54" y1="0" x2="2.54" y2="1.27" width="0.2032" layer="94"/>
-<wire x1="10.16" y1="0" x2="10.16" y2="1.27" width="0.2032" layer="94"/>
-<wire x1="5.08" y1="1.27" x2="7.62" y2="1.27" width="0.1524" layer="94" curve="-180"/>
-<wire x1="2.54" y1="1.27" x2="5.08" y2="1.27" width="0.1524" layer="94" curve="-180"/>
-<wire x1="7.62" y1="1.27" x2="10.16" y2="1.27" width="0.1524" layer="94" curve="-180"/>
-<wire x1="10.16" y1="1.27" x2="12.7" y2="1.27" width="0.1524" layer="94" curve="-180"/>
-<text x="-1.9812" y="-4.2672" size="2.54" layer="96" ratio="10" rot="SR0">&gt;Value</text>
-<text x="-0.9144" y="3.3528" size="2.54" layer="95" ratio="10" rot="SR0">&gt;Name</text>
-</symbol>
-<symbol name="CAPH">
-<pin name="22" x="7.62" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="11" x="0" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-<text x="-4.1402" y="-4.2672" size="2.1844" layer="96" ratio="10" rot="SR0">&gt;Value</text>
-<text x="-4.0894" y="2.0828" size="2.1844" layer="95" ratio="10" rot="SR0">&gt;Name</text>
-<rectangle x1="2.54" y1="-1.524" x2="3.302" y2="1.524" layer="94"/>
-<wire x1="5.08" y1="-1.524" x2="5.08" y2="1.524" width="0.254" layer="94"/>
-<wire x1="5.08" y1="1.524" x2="4.318" y2="1.524" width="0.254" layer="94"/>
-<wire x1="4.318" y1="1.524" x2="4.318" y2="-1.524" width="0.254" layer="94"/>
-<wire x1="4.318" y1="-1.524" x2="5.08" y2="-1.524" width="0.254" layer="94"/>
-<wire x1="6.096" y1="1.524" x2="6.096" y2="0.508" width="0.254" layer="94"/>
-<wire x1="5.588" y1="1.016" x2="6.604" y2="1.016" width="0.254" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="ELC11D331F" prefix="L">
-<gates>
-<gate name="A" symbol="IND" x="0" y="0" swaplevel="1"/>
-</gates>
-<devices>
-<device name="" package="IND_ELC11D">
-<connects>
-<connect gate="A" pin="1" pad="1"/>
-<connect gate="A" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MANUFACTURER_PART_NUMBER" value="ELC11D331F" constant="no"/>
-<attribute name="VENDOR" value="Panasonic" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="MAL203854221E3" prefix="C">
-<gates>
-<gate name="A" symbol="CAPH" x="0" y="0" swaplevel="1"/>
-</gates>
-<devices>
-<device name="" package="CAP_5_X_11">
-<connects>
-<connect gate="A" pin="11" pad="1"/>
-<connect gate="A" pin="22" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MANUFACTURER_PART_NUMBER" value="MAL203854221E3" constant="no"/>
-<attribute name="VENDOR" value="VISHAY" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="con-wago_2604">
 <packages>
 <package name="P-2604-1102">
@@ -11115,6 +11019,1988 @@ Source: http://cache.national.com/ds/LM/LM2574.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="Panasonic-ELC">
+<description>&lt;b&gt; Developed By element14 &lt;/b&gt;&lt;p&gt; 
+
+For feedback and Technical support please contact reach from below:
+&lt;br&gt; Tech Support e-mail  : &lt;a href="mailto:CAD_Tech@element14.com"&gt;CAD_Tech@element14.com&lt;/a&gt;
+&lt;br&gt;Community website: &lt;a href=http://www.element14.com/community/community/knode/cad_tools/cadsoft_eagle/eagle_cad_libraries&gt;
+EAGLE CAD Libraries on element14&lt;/a&gt;</description>
+<packages>
+<package name="IND_ELC11D">
+<pad name="1" x="-5.0038" y="0" drill="0.9906"/>
+<pad name="2" x="0" y="0" drill="0.9906" rot="R180"/>
+<wire x1="-8.509" y1="2.4638" x2="-4.9784" y2="5.9944" width="0.1524" layer="39"/>
+<wire x1="-4.9784" y1="5.9944" x2="-0.0254" y2="5.9944" width="0.1524" layer="39"/>
+<wire x1="-0.0254" y1="5.9944" x2="3.5052" y2="2.4638" width="0.1524" layer="39"/>
+<wire x1="3.5052" y1="2.4638" x2="3.5052" y2="-2.4638" width="0.1524" layer="39"/>
+<wire x1="3.5052" y1="-2.4638" x2="-0.0254" y2="-5.9944" width="0.1524" layer="39"/>
+<wire x1="-0.0254" y1="-5.9944" x2="-4.9784" y2="-5.9944" width="0.1524" layer="39"/>
+<wire x1="-4.9784" y1="-5.9944" x2="-8.509" y2="-2.4638" width="0.1524" layer="39"/>
+<wire x1="-8.509" y1="-2.4638" x2="-8.509" y2="2.4638" width="0.1524" layer="39"/>
+<wire x1="3.2512" y1="0" x2="-8.255" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-8.255" y1="0" x2="3.2512" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="3.2512" y1="0" x2="-8.255" y2="0" width="0.1524" layer="51" curve="-180"/>
+<wire x1="-8.255" y1="0" x2="3.2512" y2="0" width="0.1524" layer="51" curve="-180"/>
+<text x="-7.239" y="6.5278" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-8.1026" y="-8.3566" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
+<package name="IND_ELC09D">
+<pad name="1" x="-5.0038" y="0" drill="0.9906"/>
+<pad name="2" x="0" y="0" drill="0.9906" rot="R180"/>
+<wire x1="-7.493" y1="2.0574" x2="-4.572" y2="5.0038" width="0.1524" layer="39"/>
+<wire x1="-4.572" y1="5.0038" x2="-0.4318" y2="5.0038" width="0.1524" layer="39"/>
+<wire x1="-0.4318" y1="5.0038" x2="2.5146" y2="2.0574" width="0.1524" layer="39"/>
+<wire x1="2.5146" y1="2.0574" x2="2.5146" y2="-2.0574" width="0.1524" layer="39"/>
+<wire x1="2.5146" y1="-2.0574" x2="-0.4318" y2="-5.0038" width="0.1524" layer="39"/>
+<wire x1="-0.4318" y1="-5.0038" x2="-4.572" y2="-5.0038" width="0.1524" layer="39"/>
+<wire x1="-4.572" y1="-5.0038" x2="-7.493" y2="-2.0574" width="0.1524" layer="39"/>
+<wire x1="-7.493" y1="-2.0574" x2="-7.493" y2="2.0574" width="0.1524" layer="39"/>
+<wire x1="2.2606" y1="0" x2="-7.239" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-7.239" y1="0" x2="2.2606" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="2.2606" y1="0" x2="-7.239" y2="0" width="0.1524" layer="51" curve="-180"/>
+<wire x1="-7.239" y1="0" x2="2.2606" y2="0" width="0.1524" layer="51" curve="-180"/>
+<text x="-7.2898" y="5.2578" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-8.2042" y="-7.239" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
+<package name="IND_ELC10D">
+<pad name="1" x="-5.0038" y="0" drill="1.1938"/>
+<pad name="2" x="0" y="0" drill="1.1938" rot="R180"/>
+<wire x1="-9.2456" y1="2.7686" x2="-5.2832" y2="6.7564" width="0.1524" layer="39"/>
+<wire x1="-5.2832" y1="6.7564" x2="0.2794" y2="6.7564" width="0.1524" layer="39"/>
+<wire x1="0.2794" y1="6.7564" x2="4.2418" y2="2.7686" width="0.1524" layer="39"/>
+<wire x1="4.2418" y1="2.7686" x2="4.2418" y2="-2.7686" width="0.1524" layer="39"/>
+<wire x1="4.2418" y1="-2.7686" x2="0.2794" y2="-6.7564" width="0.1524" layer="39"/>
+<wire x1="0.2794" y1="-6.7564" x2="-5.2832" y2="-6.7564" width="0.1524" layer="39"/>
+<wire x1="-5.2832" y1="-6.7564" x2="-9.2456" y2="-2.7686" width="0.1524" layer="39"/>
+<wire x1="-9.2456" y1="-2.7686" x2="-9.2456" y2="2.7686" width="0.1524" layer="39"/>
+<wire x1="3.9878" y1="0" x2="-8.9916" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-8.9916" y1="0" x2="3.9878" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="3.9878" y1="0" x2="-8.9916" y2="0" width="0.1524" layer="51" curve="-180"/>
+<wire x1="-8.9916" y1="0" x2="3.9878" y2="0" width="0.1524" layer="51" curve="-180"/>
+<text x="-7.1882" y="6.9342" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-8.0518" y="-9.1948" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
+<package name="IND_ELC12D">
+<pad name="1" x="-7.493" y="0" drill="1.1938"/>
+<pad name="2" x="0" y="0" drill="1.1938" rot="R180"/>
+<wire x1="-11.2522" y1="3.0988" x2="-6.8326" y2="7.493" width="0.1524" layer="39"/>
+<wire x1="-6.8326" y1="7.493" x2="-0.6604" y2="7.493" width="0.1524" layer="39"/>
+<wire x1="-0.6604" y1="7.493" x2="3.7592" y2="3.0988" width="0.1524" layer="39"/>
+<wire x1="3.7592" y1="3.0988" x2="3.7592" y2="-3.0988" width="0.1524" layer="39"/>
+<wire x1="3.7592" y1="-3.0988" x2="-0.6604" y2="-7.493" width="0.1524" layer="39"/>
+<wire x1="-0.6604" y1="-7.493" x2="-6.8326" y2="-7.493" width="0.1524" layer="39"/>
+<wire x1="-6.8326" y1="-7.493" x2="-11.2522" y2="-3.0988" width="0.1524" layer="39"/>
+<wire x1="-11.2522" y1="-3.0988" x2="-11.2522" y2="3.0988" width="0.1524" layer="39"/>
+<wire x1="3.5052" y1="0" x2="-10.9982" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-10.9982" y1="0" x2="3.5052" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="3.5052" y1="0" x2="-10.9982" y2="0" width="0.1524" layer="51" curve="-180"/>
+<wire x1="-10.9982" y1="0" x2="3.5052" y2="0" width="0.1524" layer="51" curve="-180"/>
+<text x="-8.4074" y="8.2042" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-9.4488" y="-9.6774" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
+<package name="IND_ELC16B">
+<pad name="1" x="-7.493" y="0" drill="1.4986"/>
+<pad name="2" x="0" y="0" drill="1.4986" rot="R180"/>
+<wire x1="-12.4968" y1="3.6068" x2="-7.366" y2="8.763" width="0.1524" layer="39"/>
+<wire x1="-7.366" y1="8.763" x2="-0.1524" y2="8.763" width="0.1524" layer="39"/>
+<wire x1="-0.1524" y1="8.763" x2="5.0038" y2="3.6068" width="0.1524" layer="39"/>
+<wire x1="5.0038" y1="3.6068" x2="5.0038" y2="-3.6068" width="0.1524" layer="39"/>
+<wire x1="5.0038" y1="-3.6068" x2="-0.1524" y2="-8.763" width="0.1524" layer="39"/>
+<wire x1="-0.1524" y1="-8.763" x2="-7.366" y2="-8.763" width="0.1524" layer="39"/>
+<wire x1="-7.366" y1="-8.763" x2="-12.4968" y2="-3.6068" width="0.1524" layer="39"/>
+<wire x1="-12.4968" y1="-3.6068" x2="-12.4968" y2="3.6068" width="0.1524" layer="39"/>
+<wire x1="4.7498" y1="0" x2="-12.2428" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-12.2428" y1="0" x2="4.7498" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="4.7498" y1="0" x2="-12.2428" y2="0" width="0.1524" layer="51" curve="-180"/>
+<wire x1="-12.2428" y1="0" x2="4.7498" y2="0" width="0.1524" layer="51" curve="-180"/>
+<text x="-8.7884" y="8.9662" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-9.3472" y="-11.1252" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
+<package name="IND_ELC18B">
+<pad name="1" x="-7.493" y="0" drill="1.4986"/>
+<pad name="2" x="0" y="0" drill="1.4986" rot="R180"/>
+<wire x1="-14.5034" y1="4.4196" x2="-8.1788" y2="10.7442" width="0.1524" layer="39"/>
+<wire x1="-8.1788" y1="10.7442" x2="0.6858" y2="10.7442" width="0.1524" layer="39"/>
+<wire x1="0.6858" y1="10.7442" x2="7.0104" y2="4.4196" width="0.1524" layer="39"/>
+<wire x1="7.0104" y1="4.4196" x2="7.0104" y2="-4.4196" width="0.1524" layer="39"/>
+<wire x1="7.0104" y1="-4.4196" x2="0.6858" y2="-10.7442" width="0.1524" layer="39"/>
+<wire x1="0.6858" y1="-10.7442" x2="-8.1788" y2="-10.7442" width="0.1524" layer="39"/>
+<wire x1="-8.1788" y1="-10.7442" x2="-14.5034" y2="-4.4196" width="0.1524" layer="39"/>
+<wire x1="-14.5034" y1="-4.4196" x2="-14.5034" y2="4.4196" width="0.1524" layer="39"/>
+<wire x1="6.7564" y1="0" x2="-14.2494" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-14.2494" y1="0" x2="6.7564" y2="0" width="0.1524" layer="21" curve="-180"/>
+<wire x1="6.7564" y1="0" x2="-14.2494" y2="0" width="0.1524" layer="51" curve="-180"/>
+<wire x1="-14.2494" y1="0" x2="6.7564" y2="0" width="0.1524" layer="51" curve="-180"/>
+<text x="-8.1788" y="11.2014" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-9.271" y="-13.2334" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="IND">
+<pin name="1" x="15.24" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+<pin name="2" x="0" y="0" visible="off" length="short" direction="pas"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="1.27" width="0.2032" layer="94"/>
+<wire x1="7.62" y1="0" x2="7.62" y2="1.27" width="0.2032" layer="94"/>
+<wire x1="12.7" y1="0" x2="12.7" y2="1.27" width="0.2032" layer="94"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="1.27" width="0.2032" layer="94"/>
+<wire x1="10.16" y1="0" x2="10.16" y2="1.27" width="0.2032" layer="94"/>
+<wire x1="5.08" y1="1.27" x2="7.62" y2="1.27" width="0.1524" layer="94" curve="-180"/>
+<wire x1="2.54" y1="1.27" x2="5.08" y2="1.27" width="0.1524" layer="94" curve="-180"/>
+<wire x1="7.62" y1="1.27" x2="10.16" y2="1.27" width="0.1524" layer="94" curve="-180"/>
+<wire x1="10.16" y1="1.27" x2="12.7" y2="1.27" width="0.1524" layer="94" curve="-180"/>
+<text x="2.2606" y="4.0386" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="1.4478" y="-3.3782" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ELC" prefix="L">
+<description>Choke Coils</description>
+<gates>
+<gate name="A" symbol="IND" x="0" y="0" swaplevel="1"/>
+</gates>
+<devices>
+<device name="-09D" package="IND_ELC09D">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="09D100F">
+<attribute name="CURRENTRATING" value="2.5A" constant="no"/>
+<attribute name="MPN" value="ELC09D100F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094756  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1280" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value="±20 %" constant="no"/>
+<attribute name="VALUE" value="10UH" constant="no"/>
+</technology>
+<technology name="09D101F">
+<attribute name="CURRENTRATING" value="0.82A" constant="no"/>
+<attribute name="MPN" value="ELC09D101F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094764  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1281" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value="+/-10%" constant="no"/>
+<attribute name="VALUE" value="100UH" constant="no"/>
+</technology>
+<technology name="09D102F">
+<attribute name="CURRENTRATING" value="0.28A" constant="no"/>
+<attribute name="MPN" value="ELC09D102F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094772  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1282" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value="+/-10%" constant="no"/>
+<attribute name="VALUE" value="1000UH" constant="no"/>
+</technology>
+<technology name="09D103F">
+<attribute name="CURRENTRATING" value=" 0.08A " constant="no"/>
+<attribute name="MPN" value="ELC09D103F " constant="no"/>
+<attribute name="OC_FARNELL" value="8094780  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1283" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10% " constant="no"/>
+<attribute name="VALUE" value=" 10000UH " constant="no"/>
+</technology>
+<technology name="09D150F">
+<attribute name="CURRENTRATING" value=" 2.1A " constant="no"/>
+<attribute name="MPN" value="ELC09D150F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094799  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1284" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-20%   " constant="no"/>
+<attribute name="VALUE" value="15UH" constant="no"/>
+</technology>
+<technology name="09D151F">
+<attribute name="CURRENTRATING" value=" 0.74A " constant="no"/>
+<attribute name="MPN" value="ELC09D151F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094802  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1285" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="150UH" constant="no"/>
+</technology>
+<technology name="09D220F">
+<attribute name="CURRENTRATING" value=" 1.8A " constant="no"/>
+<attribute name="MPN" value="ELC09D220F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094829  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1287" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="22UH" constant="no"/>
+</technology>
+<technology name="09D221F">
+<attribute name="CURRENTRATING" value=" 0.58A " constant="no"/>
+<attribute name="MPN" value="ELC09D221F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094837  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1288" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="220UH" constant="no"/>
+</technology>
+<technology name="09D222F">
+<attribute name="CURRENTRATING" value=" 0.17A " constant="no"/>
+<attribute name="MPN" value="ELC09D222F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094845  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1289" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="2200UH" constant="no"/>
+</technology>
+<technology name="09D270F">
+<attribute name="CURRENTRATING" value=" 1.6A " constant="no"/>
+<attribute name="MPN" value="ELC09D270F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094853  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1290" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="27UH" constant="no"/>
+</technology>
+<technology name="09D2R2F">
+<attribute name="CURRENTRATING" value=" 3.5A " constant="no"/>
+<attribute name="MPN" value="ELC09D2R2F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094810  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1286" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-20%  " constant="no"/>
+<attribute name="VALUE" value="2.2UH " constant="no"/>
+</technology>
+<technology name="09D330F">
+<attribute name="CURRENTRATING" value=" 1.4A " constant="no"/>
+<attribute name="MPN" value="ELC09D330F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094888  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1293" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="33UH" constant="no"/>
+</technology>
+<technology name="09D331F">
+<attribute name="CURRENTRATING" value=" 0.49A " constant="no"/>
+<attribute name="MPN" value="ELC09D331F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094896  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1294" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="330UH" constant="no"/>
+</technology>
+<technology name="09D332F">
+<attribute name="CURRENTRATING" value=" 0.14A " constant="no"/>
+<attribute name="MPN" value="ELC09D332F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094900  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1295" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="3300UH" constant="no"/>
+</technology>
+<technology name="09D391F">
+<attribute name="CURRENTRATING" value=" 0.46A " constant="no"/>
+<attribute name="MPN" value="ELC09D391F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094926  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="390UH" constant="no"/>
+</technology>
+<technology name="09D392F">
+<attribute name="CURRENTRATING" value=" 0.13A " constant="no"/>
+<attribute name="MPN" value="ELC09D392F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094934  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1298" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="3900UH" constant="no"/>
+</technology>
+<technology name="09D3R3F">
+<attribute name="CURRENTRATING" value=" 3.2A " constant="no"/>
+<attribute name="MPN" value="ELC09D3R3F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094861  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1291" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-20%  " constant="no"/>
+<attribute name="VALUE" value=" 3.3UH" constant="no"/>
+</technology>
+<technology name="09D3R9F">
+<attribute name="CURRENTRATING" value=" 3.1A " constant="no"/>
+<attribute name="MPN" value="ELC09D3R9F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094870  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-20% " constant="no"/>
+<attribute name="VALUE" value=" 3.9UH " constant="no"/>
+</technology>
+<technology name="09D470F">
+<attribute name="CURRENTRATING" value=" 1.2A " constant="no"/>
+<attribute name="MPN" value="ELC09D470F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094950  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1300" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="47UH" constant="no"/>
+</technology>
+<technology name="09D471F">
+<attribute name="CURRENTRATING" value=" 0.39A " constant="no"/>
+<attribute name="MPN" value="ELC09D471F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094969  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1301" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="470UH" constant="no"/>
+</technology>
+<technology name="09D4R7F">
+<attribute name="CURRENTRATING" value=" 3A " constant="no"/>
+<attribute name="MPN" value="ELC09D4R7F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094942  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1299" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-20%  " constant="no"/>
+<attribute name="VALUE" value="4.7UH " constant="no"/>
+</technology>
+<technology name="09D680F">
+<attribute name="CURRENTRATING" value=" 1A " constant="no"/>
+<attribute name="MPN" value="ELC09D680F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094993  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1304" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="68UH" constant="no"/>
+</technology>
+<technology name="09D681F">
+<attribute name="CURRENTRATING" value=" 0.34A " constant="no"/>
+<attribute name="MPN" value="ELC09D681F" constant="no"/>
+<attribute name="OC_FARNELL" value="8095000  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1305" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-10%   " constant="no"/>
+<attribute name="VALUE" value="680UH" constant="no"/>
+</technology>
+<technology name="09D6R8F">
+<attribute name="CURRENTRATING" value=" 2.8A " constant="no"/>
+<attribute name="MPN" value="ELC09D6R8F" constant="no"/>
+<attribute name="OC_FARNELL" value="8094985  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1303" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-20% " constant="no"/>
+<attribute name="VALUE" value=" 6.8UH " constant="no"/>
+</technology>
+<technology name="09D8R2F">
+<attribute name="CURRENTRATING" value=" 2.6A " constant="no"/>
+<attribute name="MPN" value="ELC09D8R2F" constant="no"/>
+<attribute name="OC_FARNELL" value="8095035  " constant="no"/>
+<attribute name="OC_NEWARK" value="38K1306" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="TOLERANCE" value=" +/-20%  " constant="no"/>
+<attribute name="VALUE" value="8.2UH " constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-10D" package="IND_ELC10D">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="10D100E">
+<attribute name="CURRENTRATING" value=" 3.9A " constant="no"/>
+<attribute name="MPN" value="ELC10D100E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749056  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 10UH " constant="no"/>
+</technology>
+<technology name="10D101E">
+<attribute name="CURRENTRATING" value=" 1.7A " constant="no"/>
+<attribute name="MPN" value="ELC10D101E" constant="no"/>
+<attribute name="OC_FARNELL" value="1308459  " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4907" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 100UH " constant="no"/>
+</technology>
+<technology name="10D102E">
+<attribute name="CURRENTRATING" value=" 0.5A " constant="no"/>
+<attribute name="MPN" value="ELC10D102E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749077  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9054" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1000UH " constant="no"/>
+</technology>
+<technology name="10D120E">
+<attribute name="CURRENTRATING" value=" 3.8A " constant="no"/>
+<attribute name="MPN" value="ELC10D120E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749057  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9055" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 12UH " constant="no"/>
+</technology>
+<technology name="10D121E">
+<attribute name="CURRENTRATING" value=" 1.6A " constant="no"/>
+<attribute name="MPN" value="ELC10D121E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749069  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9056" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 120UH " constant="no"/>
+</technology>
+<technology name="10D122E">
+<attribute name="CURRENTRATING" value=" 0.45A " constant="no"/>
+<attribute name="MPN" value="ELC10D122E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749078  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9057" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1200UH " constant="no"/>
+</technology>
+<technology name="10D150E">
+<attribute name="CURRENTRATING" value=" 3.5A " constant="no"/>
+<attribute name="MPN" value="ELC10D150E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749058  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9058" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 15UH " constant="no"/>
+</technology>
+<technology name="10D151E">
+<attribute name="CURRENTRATING" value=" 1.4A " constant="no"/>
+<attribute name="MPN" value="ELC10D151E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749070  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9059" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 150UH " constant="no"/>
+</technology>
+<technology name="10D152E">
+<attribute name="CURRENTRATING" value=" 0.42A " constant="no"/>
+<attribute name="MPN" value="ELC10D152E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749081  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1500UH " constant="no"/>
+</technology>
+<technology name="10D180E">
+<attribute name="CURRENTRATING" value=" 3.4A " constant="no"/>
+<attribute name="MPN" value="ELC10D180E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749059  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9061" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 18UH " constant="no"/>
+</technology>
+<technology name="10D181E">
+<attribute name="CURRENTRATING" value=" 1.3A " constant="no"/>
+<attribute name="MPN" value="ELC10D181E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749071  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9062" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 180UH " constant="no"/>
+</technology>
+<technology name="10D182E">
+<attribute name="CURRENTRATING" value=" 0.4A " constant="no"/>
+<attribute name="MPN" value="ELC10D182E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749082  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9063" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1800UH " constant="no"/>
+</technology>
+<technology name="10D220E">
+<attribute name="CURRENTRATING" value=" 3.2A " constant="no"/>
+<attribute name="MPN" value="ELC10D220E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749060  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 22UH " constant="no"/>
+</technology>
+<technology name="10D221E">
+<attribute name="CURRENTRATING" value=" 1.1A " constant="no"/>
+<attribute name="MPN" value="ELC10D221E" constant="no"/>
+<attribute name="OC_FARNELL" value="1308460 " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4908 " constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 220UH " constant="no"/>
+</technology>
+<technology name="10D222E">
+<attribute name="CURRENTRATING" value=" 0.36A " constant="no"/>
+<attribute name="MPN" value="ELC10D222E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749083  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9067" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2200UH " constant="no"/>
+</technology>
+<technology name="10D270E">
+<attribute name="CURRENTRATING" value=" 3A " constant="no"/>
+<attribute name="MPN" value="ELC10D270E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749061  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9068" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 27UH " constant="no"/>
+</technology>
+<technology name="10D271E">
+<attribute name="CURRENTRATING" value=" 1A " constant="no"/>
+<attribute name="MPN" value="ELC10D271E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749072  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9069" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 270UH " constant="no"/>
+</technology>
+<technology name="10D272E">
+<attribute name="CURRENTRATING" value=" 0.32A " constant="no"/>
+<attribute name="MPN" value="ELC10D272E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749084  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9070" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2700UH " constant="no"/>
+</technology>
+<technology name="10D2R2E">
+<attribute name="CURRENTRATING" value=" 5.9A " constant="no"/>
+<attribute name="MPN" value="ELC10D2R2E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749049  " constant="no"/>
+<attribute name="OC_NEWARK" value="56W4073" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2.2UH " constant="no"/>
+</technology>
+<technology name="10D2R7E">
+<attribute name="CURRENTRATING" value=" 5.5A " constant="no"/>
+<attribute name="MPN" value="ELC10D2R7E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749050  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9065" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2.7UH " constant="no"/>
+</technology>
+<technology name="10D330E">
+<attribute name="CURRENTRATING" value=" 2.8A " constant="no"/>
+<attribute name="MPN" value="ELC10D330E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749062  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9072" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 33UH " constant="no"/>
+</technology>
+<technology name="10D331E">
+<attribute name="CURRENTRATING" value=" 0.9A " constant="no"/>
+<attribute name="MPN" value="ELC10D331E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749073  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9073" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 330UH " constant="no"/>
+</technology>
+<technology name="10D332E">
+<attribute name="CURRENTRATING" value=" 0.28A " constant="no"/>
+<attribute name="MPN" value="ELC10D332E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749085  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9074" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3300UH " constant="no"/>
+</technology>
+<technology name="10D390E">
+<attribute name="CURRENTRATING" value=" 2.7A " constant="no"/>
+<attribute name="MPN" value="ELC10D390E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749063  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9075" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 39UH " constant="no"/>
+</technology>
+<technology name="10D391E">
+<attribute name="CURRENTRATING" value=" 0.8A " constant="no"/>
+<attribute name="MPN" value="ELC10D391E" constant="no"/>
+<attribute name="OC_FARNELL" value="1308461  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 390UH " constant="no"/>
+</technology>
+<technology name="10D3R3E">
+<attribute name="CURRENTRATING" value=" 5.2A " constant="no"/>
+<attribute name="MPN" value="ELC10D3R3E" constant="no"/>
+<attribute name="OC_FARNELL" value="1308457  " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4909" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3.3UH " constant="no"/>
+</technology>
+<technology name="10D470E">
+<attribute name="CURRENTRATING" value=" 2.5A " constant="no"/>
+<attribute name="MPN" value="ELC10D470E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749064  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9077" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 47UH " constant="no"/>
+</technology>
+<technology name="10D471E">
+<attribute name="CURRENTRATING" value=" 0.7A " constant="no"/>
+<attribute name="MPN" value="ELC10D471E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749074  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9078" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 470UH " constant="no"/>
+</technology>
+<technology name="10D4R7E">
+<attribute name="CURRENTRATING" value=" 4.6A " constant="no"/>
+<attribute name="MPN" value="ELC10D4R7E" constant="no"/>
+<attribute name="OC_FARNELL" value="1308458  " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4911" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 4.7UH " constant="no"/>
+</technology>
+<technology name="10D561E">
+<attribute name="CURRENTRATING" value=" 0.68A " constant="no"/>
+<attribute name="MPN" value="ELC10D561E" constant="no"/>
+<attribute name="OC_FARNELL" value="1308462  " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4912" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 560UH " constant="no"/>
+</technology>
+<technology name="10D680E">
+<attribute name="CURRENTRATING" value=" 2.1A " constant="no"/>
+<attribute name="MPN" value="ELC10D680E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749066  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9082" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 68UH " constant="no"/>
+</technology>
+<technology name="10D681E">
+<attribute name="CURRENTRATING" value=" 0.64A " constant="no"/>
+<attribute name="MPN" value="ELC10D681E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749075  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9083" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 680UH " constant="no"/>
+</technology>
+<technology name="10D6R8E">
+<attribute name="CURRENTRATING" value=" 4.2A " constant="no"/>
+<attribute name="MPN" value="ELC10D6R8E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749053  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9081" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 6.8UH " constant="no"/>
+</technology>
+<technology name="10D820E">
+<attribute name="CURRENTRATING" value=" 1.8A " constant="no"/>
+<attribute name="MPN" value="ELC10D820E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749068  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9085" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 82UH " constant="no"/>
+</technology>
+<technology name="10D8R2E">
+<attribute name="CURRENTRATING" value=" 4A " constant="no"/>
+<attribute name="MPN" value="ELC10D8R2E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749054  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9084" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 8.2UH " constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-11D" package="IND_ELC11D">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="11D100F">
+<attribute name="CURRENTRATING" value=" 3.5A " constant="no"/>
+<attribute name="MPN" value="ELC11D100F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749096  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9087" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 10UH " constant="no"/>
+</technology>
+<technology name="11D101F">
+<attribute name="CURRENTRATING" value=" 1.8A " constant="no"/>
+<attribute name="MPN" value="ELC11D101F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749108  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9088" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 100UH " constant="no"/>
+</technology>
+<technology name="11D102F">
+<attribute name="CURRENTRATING" value=" 0.57A " constant="no"/>
+<attribute name="MPN" value="ELC11D102F" constant="no"/>
+<attribute name="OC_FARNELL" value="1308468  " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4913" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1000UH " constant="no"/>
+</technology>
+<technology name="11D103F">
+<attribute name="CURRENTRATING" value=" 0.16A " constant="no"/>
+<attribute name="MPN" value="ELC11D103F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749130  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9089" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 10000UH " constant="no"/>
+</technology>
+<technology name="11D120F">
+<attribute name="CURRENTRATING" value=" 3.4A " constant="no"/>
+<attribute name="MPN" value="ELC11D120F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749097  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9090" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 12UH " constant="no"/>
+</technology>
+<technology name="11D121F">
+<attribute name="CURRENTRATING" value=" 1.6A " constant="no"/>
+<attribute name="MPN" value="ELC11D121F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749111  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9091" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 120UH " constant="no"/>
+</technology>
+<technology name="11D122F">
+<attribute name="CURRENTRATING" value=" 0.52A " constant="no"/>
+<attribute name="MPN" value="ELC11D122F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749118  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9092" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1200UH " constant="no"/>
+</technology>
+<technology name="11D150F">
+<attribute name="CURRENTRATING" value=" 3.3A " constant="no"/>
+<attribute name="MPN" value="ELC11D150F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749098  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9093" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 15UH " constant="no"/>
+</technology>
+<technology name="11D152F">
+<attribute name="CURRENTRATING" value=" 0.43A " constant="no"/>
+<attribute name="MPN" value="ELC11D152F" constant="no"/>
+<attribute name="OC_FARNELL" value="1308469  " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4914" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1500UH " constant="no"/>
+</technology>
+<technology name="11D180F">
+<attribute name="CURRENTRATING" value=" 3.1A " constant="no"/>
+<attribute name="MPN" value="ELC11D180F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749099  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9095" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 18UH " constant="no"/>
+</technology>
+<technology name="11D181F">
+<attribute name="CURRENTRATING" value=" 1.3A " constant="no"/>
+<attribute name="MPN" value="ELC11D181F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749113  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 180UH " constant="no"/>
+</technology>
+<technology name="11D220F">
+<attribute name="CURRENTRATING" value=" 2.8A " constant="no"/>
+<attribute name="MPN" value="ELC11D220F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749100  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9100" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 22UH " constant="no"/>
+</technology>
+<technology name="11D221F">
+<attribute name="CURRENTRATING" value=" 1.2A " constant="no"/>
+<attribute name="MPN" value="ELC11D221F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749114  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9101" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 220UH " constant="no"/>
+</technology>
+<technology name="11D270F">
+<attribute name="CURRENTRATING" value=" 2.7A " constant="no"/>
+<attribute name="MPN" value="ELC11D270F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749101  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9103" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 27UH " constant="no"/>
+</technology>
+<technology name="11D271F">
+<attribute name="CURRENTRATING" value=" 1.1A " constant="no"/>
+<attribute name="MPN" value="ELC11D271F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749115  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9104" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 270UH " constant="no"/>
+</technology>
+<technology name="11D272F">
+<attribute name="CURRENTRATING" value=" 0.34A " constant="no"/>
+<attribute name="MPN" value="ELC11D272F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749123  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9105" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2700UH " constant="no"/>
+</technology>
+<technology name="11D2R2F">
+<attribute name="CURRENTRATING" value=" 5.3A " constant="no"/>
+<attribute name="MPN" value="ELC11D2R2F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749087  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9098" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2.2UH " constant="no"/>
+</technology>
+<technology name="11D2R7F">
+<attribute name="CURRENTRATING" value=" 5.1A " constant="no"/>
+<attribute name="MPN" value="ELC11D2R7F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749088  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2.7UH " constant="no"/>
+</technology>
+<technology name="11D330F">
+<attribute name="CURRENTRATING" value=" 2.6A " constant="no"/>
+<attribute name="MPN" value="ELC11D330F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749102  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9108" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 33UH " constant="no"/>
+</technology>
+<technology name="11D331F">
+<attribute name="CURRENTRATING" value=" 1.0A " constant="no"/>
+<attribute name="MPN" value="ELC11D331F" constant="no"/>
+<attribute name="OC_FARNELL" value="1308463  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 330UH " constant="no"/>
+</technology>
+<technology name="11D332F">
+<attribute name="CURRENTRATING" value=" 0.31A " constant="no"/>
+<attribute name="MPN" value="ELC11D332F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749124  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9109" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3300UH " constant="no"/>
+</technology>
+<technology name="11D390F">
+<attribute name="CURRENTRATING" value=" 2.5A " constant="no"/>
+<attribute name="MPN" value="ELC11D390F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749103  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9110" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 39UH " constant="no"/>
+</technology>
+<technology name="11D391F">
+<attribute name="CURRENTRATING" value=" 0.95A " constant="no"/>
+<attribute name="MPN" value="ELC11D391F" constant="no"/>
+<attribute name="OC_FARNELL" value="1308465  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 390UH " constant="no"/>
+</technology>
+<technology name="11D392F">
+<attribute name="CURRENTRATING" value=" 0.29A " constant="no"/>
+<attribute name="MPN" value="ELC11D392F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749125  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9111" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3900UH " constant="no"/>
+</technology>
+<technology name="11D3R3F">
+<attribute name="CURRENTRATING" value=" 4.9A " constant="no"/>
+<attribute name="MPN" value="ELC11D3R3F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749089  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9106" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3.3UH " constant="no"/>
+</technology>
+<technology name="11D3R9F">
+<attribute name="CURRENTRATING" value=" 4.8A " constant="no"/>
+<attribute name="MPN" value="ELC11D3R9F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749090  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3.9UH " constant="no"/>
+</technology>
+<technology name="11D470F">
+<attribute name="CURRENTRATING" value=" 2.3A " constant="no"/>
+<attribute name="MPN" value="ELC11D470F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749104  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9113" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 47UH " constant="no"/>
+</technology>
+<technology name="11D471F">
+<attribute name="CURRENTRATING" value=" 0.82A " constant="no"/>
+<attribute name="MPN" value="ELC11D471F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749116  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9114" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 470UH " constant="no"/>
+</technology>
+<technology name="11D472F">
+<attribute name="CURRENTRATING" value=" 0.26A " constant="no"/>
+<attribute name="MPN" value="ELC11D472F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749126  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9115" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 4700UH " constant="no"/>
+</technology>
+<technology name="11D4R7F">
+<attribute name="CURRENTRATING" value=" 4.7A " constant="no"/>
+<attribute name="MPN" value="ELC11D4R7F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749091  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 4.7UH " constant="no"/>
+</technology>
+<technology name="11D560F">
+<attribute name="CURRENTRATING" value=" 2.1A " constant="no"/>
+<attribute name="MPN" value="ELC11D560F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749105  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9117" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 56UH " constant="no"/>
+</technology>
+<technology name="11D561F">
+<attribute name="CURRENTRATING" value=" 0.73A " constant="no"/>
+<attribute name="MPN" value="ELC11D561F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749117  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9118" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 560UH " constant="no"/>
+</technology>
+<technology name="11D562F">
+<attribute name="CURRENTRATING" value=" 0.23A " constant="no"/>
+<attribute name="MPN" value="ELC11D562F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749127  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9119" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 5600UH " constant="no"/>
+</technology>
+<technology name="11D5R6F">
+<attribute name="CURRENTRATING" value=" 4.6A " constant="no"/>
+<attribute name="MPN" value="ELC11D5R6F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749093  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9116" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 5.6UH " constant="no"/>
+</technology>
+<technology name="11D681F">
+<attribute name="CURRENTRATING" value=" 0.64A " constant="no"/>
+<attribute name="MPN" value="ELC11D681F" constant="no"/>
+<attribute name="OC_FARNELL" value="1308466  " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4917" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 680UH " constant="no"/>
+</technology>
+<technology name="11D6R8F">
+<attribute name="CURRENTRATING" value=" 4.4A " constant="no"/>
+<attribute name="MPN" value="ELC11D6R8F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749094  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9120" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 6.8UH " constant="no"/>
+</technology>
+<technology name="11D820F">
+<attribute name="CURRENTRATING" value=" 1.9A " constant="no"/>
+<attribute name="MPN" value="ELC11D820F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749107  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9124" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 82UH " constant="no"/>
+</technology>
+<technology name="11D821F">
+<attribute name="CURRENTRATING" value=" 0.62A " constant="no"/>
+<attribute name="MPN" value="ELC11D821F" constant="no"/>
+<attribute name="OC_FARNELL" value="1308467  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 820UH " constant="no"/>
+</technology>
+<technology name="11D822F">
+<attribute name="CURRENTRATING" value=" 0.18A " constant="no"/>
+<attribute name="MPN" value="ELC11D822F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749129  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9125" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 8200UH " constant="no"/>
+</technology>
+<technology name="11D8R2F">
+<attribute name="CURRENTRATING" value=" 3.9A " constant="no"/>
+<attribute name="MPN" value="ELC11D8R2F" constant="no"/>
+<attribute name="OC_FARNELL" value="1749095  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9123" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 8.2UH " constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-12D" package="IND_ELC12D">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="12D101E">
+<attribute name="CURRENTRATING" value=" 1.9A " constant="no"/>
+<attribute name="MPN" value="ELC12D101E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749131  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9126" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 100UH " constant="no"/>
+</technology>
+<technology name="12D102E">
+<attribute name="CURRENTRATING" value=" 0.87A " constant="no"/>
+<attribute name="MPN" value="ELC12D102E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749144  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9127" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1000UH " constant="no"/>
+</technology>
+<technology name="12D103E">
+<attribute name="CURRENTRATING" value=" 0.27A " constant="no"/>
+<attribute name="MPN" value="ELC12D103E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749157  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9128" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 10000UH " constant="no"/>
+</technology>
+<technology name="12D121E">
+<attribute name="CURRENTRATING" value=" 1.78A " constant="no"/>
+<attribute name="MPN" value="ELC12D121E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749132  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 120UH " constant="no"/>
+</technology>
+<technology name="12D122E">
+<attribute name="CURRENTRATING" value=" 0.86A " constant="no"/>
+<attribute name="MPN" value="ELC12D122E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749145  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9130" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1200UH " constant="no"/>
+</technology>
+<technology name="12D151E">
+<attribute name="CURRENTRATING" value=" 1.67A  " constant="no"/>
+<attribute name="MPN" value="ELC12D151E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749133  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9131" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 150UH " constant="no"/>
+</technology>
+<technology name="12D152E">
+<attribute name="CURRENTRATING" value=" 0.64A " constant="no"/>
+<attribute name="MPN" value="ELC12D152E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749147  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1500UH " constant="no"/>
+</technology>
+<technology name="12D181E">
+<attribute name="CURRENTRATING" value=" 1.58A  " constant="no"/>
+<attribute name="MPN" value="ELC12D181E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749135  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9133" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 180UH " constant="no"/>
+</technology>
+<technology name="12D182E">
+<attribute name="CURRENTRATING" value=" 0.63A " constant="no"/>
+<attribute name="MPN" value="ELC12D182E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749148  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9134" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1800UH " constant="no"/>
+</technology>
+<technology name="12D221E">
+<attribute name="CURRENTRATING" value=" 1.55A  " constant="no"/>
+<attribute name="MPN" value="ELC12D221E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749136" constant="no"/>
+<attribute name="OC_NEWARK" value="32R9135 " constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 220UH " constant="no"/>
+</technology>
+<technology name="12D271E">
+<attribute name="CURRENTRATING" value=" 1.44A " constant="no"/>
+<attribute name="MPN" value="ELC12D271E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749137  " constant="no"/>
+<attribute name="OC_NEWARK" value="56W4080" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 270UH " constant="no"/>
+</technology>
+<technology name="12D331E">
+<attribute name="CURRENTRATING" value=" 1.34A " constant="no"/>
+<attribute name="MPN" value="ELC12D331E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749138  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9139" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 330UH " constant="no"/>
+</technology>
+<technology name="12D332E">
+<attribute name="CURRENTRATING" value=" 0.48A " constant="no"/>
+<attribute name="MPN" value="ELC12D332E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749151  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9140" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3300UH " constant="no"/>
+</technology>
+<technology name="12D392E">
+<attribute name="CURRENTRATING" value=" 0.45A " constant="no"/>
+<attribute name="MPN" value="ELC12D392E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749152  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3900UH " constant="no"/>
+</technology>
+<technology name="12D471E">
+<attribute name="CURRENTRATING" value=" 1.25A " constant="no"/>
+<attribute name="MPN" value="ELC12D471E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749140  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9143" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 470UH " constant="no"/>
+</technology>
+<technology name="12D472E">
+<attribute name="CURRENTRATING" value=" 0.41A " constant="no"/>
+<attribute name="MPN" value="ELC12D472E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749153  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9144" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 4700UH " constant="no"/>
+</technology>
+<technology name="12D561E">
+<attribute name="CURRENTRATING" value=" 1.15A " constant="no"/>
+<attribute name="MPN" value="ELC12D561E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749141  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9145" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 560UH " constant="no"/>
+</technology>
+<technology name="12D562E">
+<attribute name="CURRENTRATING" value=" 0.34A " constant="no"/>
+<attribute name="MPN" value="ELC12D562E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749154  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9146" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 5600UH " constant="no"/>
+</technology>
+<technology name="12D681E">
+<attribute name="CURRENTRATING" value=" 0.98A " constant="no"/>
+<attribute name="MPN" value="ELC12D681E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749142  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9147" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 680UH " constant="no"/>
+</technology>
+<technology name="12D682E">
+<attribute name="CURRENTRATING" value=" 0.29A " constant="no"/>
+<attribute name="MPN" value="ELC12D682E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749155 " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9148 " constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 6800UH " constant="no"/>
+</technology>
+<technology name="12D821E">
+<attribute name="CURRENTRATING" value=" 0.94A " constant="no"/>
+<attribute name="MPN" value="ELC12D821E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749143  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9149" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 820UH " constant="no"/>
+</technology>
+<technology name="12D822E">
+<attribute name="CURRENTRATING" value=" 0.28A " constant="no"/>
+<attribute name="MPN" value="ELC12D822E" constant="no"/>
+<attribute name="OC_FARNELL" value="1749156  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 8200UH " constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-16B" package="IND_ELC16B">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="16B100L">
+<attribute name="CURRENTRATING" value=" 5.6A " constant="no"/>
+<attribute name="MPN" value="ELC16B100L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749166  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9151" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 10UH " constant="no"/>
+</technology>
+<technology name="16B101L">
+<attribute name="CURRENTRATING" value=" 2.6A " constant="no"/>
+<attribute name="MPN" value="ELC16B101L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749179  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9152" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 100UH " constant="no"/>
+</technology>
+<technology name="16B102L">
+<attribute name="CURRENTRATING" value=" 0.85A " constant="no"/>
+<attribute name="MPN" value="ELC16B102L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749192  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9153" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1000UH " constant="no"/>
+</technology>
+<technology name="16B103L">
+<attribute name="CURRENTRATING" value=" 0.26A " constant="no"/>
+<attribute name="MPN" value="ELC16B103L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749206  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9154" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 10000UH " constant="no"/>
+</technology>
+<technology name="16B120L">
+<attribute name="CURRENTRATING" value=" 5.5A " constant="no"/>
+<attribute name="MPN" value="ELC16B120L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749167  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9155" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 12UH " constant="no"/>
+</technology>
+<technology name="16B121L">
+<attribute name="CURRENTRATING" value=" 2.5A " constant="no"/>
+<attribute name="MPN" value="ELC16B121L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749180  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9156" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 120UH " constant="no"/>
+</technology>
+<technology name="16B122L">
+<attribute name="CURRENTRATING" value=" 0.82A " constant="no"/>
+<attribute name="MPN" value="ELC16B122L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749193  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9157" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1200UH " constant="no"/>
+</technology>
+<technology name="16B150L">
+<attribute name="CURRENTRATING" value=" 5.4A " constant="no"/>
+<attribute name="MPN" value="ELC16B150L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749168  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9158" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 15UH " constant="no"/>
+</technology>
+<technology name="16B151L">
+<attribute name="CURRENTRATING" value=" 2.2A " constant="no"/>
+<attribute name="MPN" value="ELC16B151L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749181  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9159" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 150UH " constant="no"/>
+</technology>
+<technology name="16B152L">
+<attribute name="CURRENTRATING" value=" 0.74A " constant="no"/>
+<attribute name="MPN" value="ELC16B152L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749194  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9160" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1500UH " constant="no"/>
+</technology>
+<technology name="16B180L">
+<attribute name="CURRENTRATING" value=" 5.1A " constant="no"/>
+<attribute name="MPN" value="ELC16B180L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749169  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9161" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 18UH " constant="no"/>
+</technology>
+<technology name="16B181L">
+<attribute name="CURRENTRATING" value=" 2.1A " constant="no"/>
+<attribute name="MPN" value="ELC16B181L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749182  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9162" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 180UH " constant="no"/>
+</technology>
+<technology name="16B182L">
+<attribute name="CURRENTRATING" value=" 0.6A " constant="no"/>
+<attribute name="MPN" value="ELC16B182L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749196  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9163" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1800UH " constant="no"/>
+</technology>
+<technology name="16B220L">
+<attribute name="CURRENTRATING" value=" 4.6A " constant="no"/>
+<attribute name="MPN" value="ELC16B220L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749170  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9164" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 22UH " constant="no"/>
+</technology>
+<technology name="16B222L">
+<attribute name="CURRENTRATING" value=" 0.57A " constant="no"/>
+<attribute name="MPN" value="ELC16B222L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749197  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2200UH " constant="no"/>
+</technology>
+<technology name="16B270L">
+<attribute name="CURRENTRATING" value=" 4.3A " constant="no"/>
+<attribute name="MPN" value="ELC16B270L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749172  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 27UH " constant="no"/>
+</technology>
+<technology name="16B271L">
+<attribute name="CURRENTRATING" value=" 1.6A " constant="no"/>
+<attribute name="MPN" value="ELC16B271L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749185  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9168" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 270UH " constant="no"/>
+</technology>
+<technology name="16B272L">
+<attribute name="CURRENTRATING" value=" 0.54A " constant="no"/>
+<attribute name="MPN" value="ELC16B272L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749198  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2700UH " constant="no"/>
+</technology>
+<technology name="16B330L">
+<attribute name="CURRENTRATING" value=" 4A " constant="no"/>
+<attribute name="MPN" value="ELC16B330L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749173  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9172" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 33UH " constant="no"/>
+</technology>
+<technology name="16B331L">
+<attribute name="CURRENTRATING" value=" 1.5A " constant="no"/>
+<attribute name="MPN" value="ELC16B331L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749186 " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9173 " constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 330UH " constant="no"/>
+</technology>
+<technology name="16B332L">
+<attribute name="CURRENTRATING" value=" 0.47A " constant="no"/>
+<attribute name="MPN" value="ELC16B332L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749199  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9174" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3300UH " constant="no"/>
+</technology>
+<technology name="16B390L">
+<attribute name="CURRENTRATING" value=" 3.9A " constant="no"/>
+<attribute name="MPN" value="ELC16B390L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749174  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 39UH " constant="no"/>
+</technology>
+<technology name="16B391L">
+<attribute name="CURRENTRATING" value=" 1.3A " constant="no"/>
+<attribute name="MPN" value="ELC16B391L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749187  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9176" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 390UH " constant="no"/>
+</technology>
+<technology name="16B392L">
+<attribute name="CURRENTRATING" value=" 0.42A " constant="no"/>
+<attribute name="MPN" value="ELC16B392L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749200  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3900UH " constant="no"/>
+</technology>
+<technology name="16B3R9L">
+<attribute name="CURRENTRATING" value=" 8A " constant="no"/>
+<attribute name="MPN" value="ELC16B3R9L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749161  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9171" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3.9UH " constant="no"/>
+</technology>
+<technology name="16B470L">
+<attribute name="CURRENTRATING" value=" 3.8A " constant="no"/>
+<attribute name="MPN" value="ELC16B470L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749175  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9179 " constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 47UH " constant="no"/>
+</technology>
+<technology name="16B471L">
+<attribute name="CURRENTRATING" value=" 1.2A " constant="no"/>
+<attribute name="MPN" value="ELC16B471L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749188  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9180" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 470UH " constant="no"/>
+</technology>
+<technology name="16B472L">
+<attribute name="CURRENTRATING" value=" 0.36A " constant="no"/>
+<attribute name="MPN" value="ELC16B472L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749202  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9180 " constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 4700UH " constant="no"/>
+</technology>
+<technology name="16B4R7L">
+<attribute name="CURRENTRATING" value=" 7.8A " constant="no"/>
+<attribute name="MPN" value="ELC16B4R7L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749162  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 4.7UH " constant="no"/>
+</technology>
+<technology name="16B560L">
+<attribute name="CURRENTRATING" value=" 3.4A " constant="no"/>
+<attribute name="MPN" value="ELC16B560L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749176  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9183" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 56UH " constant="no"/>
+</technology>
+<technology name="16B562L">
+<attribute name="CURRENTRATING" value=" 0.34A " constant="no"/>
+<attribute name="MPN" value="ELC16B562L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749203  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 5600UH " constant="no"/>
+</technology>
+<technology name="16B5R6L">
+<attribute name="CURRENTRATING" value=" 7.4A " constant="no"/>
+<attribute name="MPN" value="ELC16B5R6L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749163  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9182" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 5.6UH " constant="no"/>
+</technology>
+<technology name="16B680L">
+<attribute name="CURRENTRATING" value=" 3.2A " constant="no"/>
+<attribute name="MPN" value="ELC16B680L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749177  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9187" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 68UH " constant="no"/>
+</technology>
+<technology name="16B681L">
+<attribute name="CURRENTRATING" value=" 1A " constant="no"/>
+<attribute name="MPN" value="ELC16B681L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749190  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9188" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 680UH " constant="no"/>
+</technology>
+<technology name="16B682L">
+<attribute name="CURRENTRATING" value=" 0.32A " constant="no"/>
+<attribute name="MPN" value="ELC16B682L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749204  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9189" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 6800UH " constant="no"/>
+</technology>
+<technology name="16B6R8L">
+<attribute name="CURRENTRATING" value=" 6.7A " constant="no"/>
+<attribute name="MPN" value="ELC16B6R8L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749164  " constant="no"/>
+<attribute name="OC_NEWARK" value="56W4086" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 6.8UH " constant="no"/>
+</technology>
+<technology name="16B820L">
+<attribute name="CURRENTRATING" value=" 3A " constant="no"/>
+<attribute name="MPN" value="ELC16B820L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749178  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9191" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 82UH " constant="no"/>
+</technology>
+<technology name="16B821L">
+<attribute name="CURRENTRATING" value=" 0.88A " constant="no"/>
+<attribute name="MPN" value="ELC16B821L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749191  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9192" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 820UH " constant="no"/>
+</technology>
+<technology name="16B822L">
+<attribute name="CURRENTRATING" value=" 0.28A " constant="no"/>
+<attribute name="MPN" value="ELC16B822L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749205  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9193" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 8200UH " constant="no"/>
+</technology>
+<technology name="16B8R2L">
+<attribute name="CURRENTRATING" value=" 6.1A " constant="no"/>
+<attribute name="MPN" value="ELC16B8R2L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749165  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9190" constant="no"/>
+<attribute name="PACKAGE" value="Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 8.2UH " constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-18B" package="IND_ELC18B">
+<connects>
+<connect gate="A" pin="1" pad="1"/>
+<connect gate="A" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="18B100L">
+<attribute name="CURRENTRATING" value=" 6.5A " constant="no"/>
+<attribute name="MPN" value="ELC18B100L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749214  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9194" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 10UH " constant="no"/>
+</technology>
+<technology name="18B101L">
+<attribute name="CURRENTRATING" value=" 3.20A " constant="no"/>
+<attribute name="MPN" value="ELC18B101L" constant="no"/>
+<attribute name="OC_FARNELL" value="1308471  " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4919" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 100UH " constant="no"/>
+</technology>
+<technology name="18B102L">
+<attribute name="CURRENTRATING" value=" 1.1A " constant="no"/>
+<attribute name="MPN" value="ELC18B102L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749235  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9195" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 1000UH " constant="no"/>
+</technology>
+<technology name="18B103L">
+<attribute name="CURRENTRATING" value=" 0.36A " constant="no"/>
+<attribute name="MPN" value="ELC18B103L" constant="no"/>
+<attribute name="OC_FARNELL" value="1308475  " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4920" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 10000UH " constant="no"/>
+</technology>
+<technology name="18B120L">
+<attribute name="CURRENTRATING" value=" 6.A " constant="no"/>
+<attribute name="MPN" value="ELC18B120L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749215  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9196" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 12UH " constant="no"/>
+</technology>
+<technology name="18B121L">
+<attribute name="CURRENTRATING" value=" 3.A " constant="no"/>
+<attribute name="MPN" value="ELC18B121L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749226  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 120UH " constant="no"/>
+</technology>
+<technology name="18B150L">
+<attribute name="CURRENTRATING" value=" 5.9A " constant="no"/>
+<attribute name="MPN" value="ELC18B150L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749216  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9199" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 15UH " constant="no"/>
+</technology>
+<technology name="18B151L">
+<attribute name="CURRENTRATING" value=" 2.70A " constant="no"/>
+<attribute name="MPN" value="ELC18B151L" constant="no"/>
+<attribute name="OC_FARNELL" value="1308472  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 150UH " constant="no"/>
+</technology>
+<technology name="18B180L">
+<attribute name="CURRENTRATING" value=" 5.6A " constant="no"/>
+<attribute name="MPN" value="ELC18B180L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749217 " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown " constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 18UH " constant="no"/>
+</technology>
+<technology name="18B181L">
+<attribute name="CURRENTRATING" value=" 2.6A " constant="no"/>
+<attribute name="MPN" value="ELC18B181L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749227  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9201" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 180UH " constant="no"/>
+</technology>
+<technology name="18B221L">
+<attribute name="CURRENTRATING" value=" 2.4A " constant="no"/>
+<attribute name="MPN" value="ELC18B221L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749228  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9204" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 220UH " constant="no"/>
+</technology>
+<technology name="18B222L">
+<attribute name="CURRENTRATING" value=" 0.75A " constant="no"/>
+<attribute name="MPN" value="ELC18B222L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749239  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9205" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2200UH " constant="no"/>
+</technology>
+<technology name="18B270L">
+<attribute name="CURRENTRATING" value=" 4.8A " constant="no"/>
+<attribute name="MPN" value="ELC18B270L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749219  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 27UH " constant="no"/>
+</technology>
+<technology name="18B271L">
+<attribute name="CURRENTRATING" value=" 2.2A " constant="no"/>
+<attribute name="MPN" value="ELC18B271L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749229  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 270UH " constant="no"/>
+</technology>
+<technology name="18B272L">
+<attribute name="CURRENTRATING" value=" 0.68A " constant="no"/>
+<attribute name="MPN" value="ELC18B272L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749240  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9208" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 2700UH " constant="no"/>
+</technology>
+<technology name="18B330L">
+<attribute name="CURRENTRATING" value=" 4.6A " constant="no"/>
+<attribute name="MPN" value="ELC18B330L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749220  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9211" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 33UH " constant="no"/>
+</technology>
+<technology name="18B332L">
+<attribute name="CURRENTRATING" value=" 0.6A " constant="no"/>
+<attribute name="MPN" value="ELC18B332L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749241  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9213" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3300UH " constant="no"/>
+</technology>
+<technology name="18B390L">
+<attribute name="CURRENTRATING" value=" 4.4A " constant="no"/>
+<attribute name="MPN" value="ELC18B390L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749221  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9214" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 39UH " constant="no"/>
+</technology>
+<technology name="18B391L">
+<attribute name="CURRENTRATING" value=" 1.8A " constant="no"/>
+<attribute name="MPN" value="ELC18B391L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749231  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9216" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 390UH " constant="no"/>
+</technology>
+<technology name="18B392L">
+<attribute name="CURRENTRATING" value=" 0.57A " constant="no"/>
+<attribute name="MPN" value="ELC18B392L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749242  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3900UH " constant="no"/>
+</technology>
+<technology name="18B3R3L">
+<attribute name="CURRENTRATING" value=" 8.5A " constant="no"/>
+<attribute name="MPN" value="ELC18B3R3L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749207  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9209" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 3.3UH " constant="no"/>
+</technology>
+<technology name="18B470L">
+<attribute name="CURRENTRATING" value=" 4.30A " constant="no"/>
+<attribute name="MPN" value="ELC18B470L" constant="no"/>
+<attribute name="OC_FARNELL" value="1308470  " constant="no"/>
+<attribute name="OC_NEWARK" value="31M4923" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 47UH " constant="no"/>
+</technology>
+<technology name="18B471L">
+<attribute name="CURRENTRATING" value=" 1.6A " constant="no"/>
+<attribute name="MPN" value="ELC18B471L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749232  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9219" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 470UH " constant="no"/>
+</technology>
+<technology name="18B560L">
+<attribute name="CURRENTRATING" value=" 4.2A " constant="no"/>
+<attribute name="MPN" value="ELC18B560L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749222  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9222" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 56UH " constant="no"/>
+</technology>
+<technology name="18B561L">
+<attribute name="CURRENTRATING" value=" 1.5A " constant="no"/>
+<attribute name="MPN" value="ELC18B561L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749233  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9223" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 560UH " constant="no"/>
+</technology>
+<technology name="18B562L">
+<attribute name="CURRENTRATING" value=" 0.46A " constant="no"/>
+<attribute name="MPN" value="ELC18B562L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749244  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9224" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 5600UH " constant="no"/>
+</technology>
+<technology name="18B680L">
+<attribute name="CURRENTRATING" value=" 4.A " constant="no"/>
+<attribute name="MPN" value="ELC18B680L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749223  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9226" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 68UH " constant="no"/>
+</technology>
+<technology name="18B681L">
+<attribute name="CURRENTRATING" value=" 1.4A " constant="no"/>
+<attribute name="MPN" value="ELC18B681L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749234  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9227" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 680UH " constant="no"/>
+</technology>
+<technology name="18B682L">
+<attribute name="CURRENTRATING" value=" 0.45A " constant="no"/>
+<attribute name="MPN" value="ELC18B682L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749245  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 6800UH " constant="no"/>
+</technology>
+<technology name="18B6R8L">
+<attribute name="CURRENTRATING" value=" 6.8A " constant="no"/>
+<attribute name="MPN" value="ELC18B6R8L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749211  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9225" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 6.8UH " constant="no"/>
+</technology>
+<technology name="18B820L">
+<attribute name="CURRENTRATING" value=" 3.7A " constant="no"/>
+<attribute name="MPN" value="ELC18B820L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749224  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9230" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 82UH " constant="no"/>
+</technology>
+<technology name="18B821L">
+<attribute name="CURRENTRATING" value=" 1.30A " constant="no"/>
+<attribute name="MPN" value="ELC18B821L" constant="no"/>
+<attribute name="OC_FARNELL" value="1308473  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 820UH " constant="no"/>
+</technology>
+<technology name="18B822L">
+<attribute name="CURRENTRATING" value=" 0.41A " constant="no"/>
+<attribute name="MPN" value="ELC18B822L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749246  " constant="no"/>
+<attribute name="OC_NEWARK" value="32R9231" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 8200UH " constant="no"/>
+</technology>
+<technology name="18B8R2L">
+<attribute name="CURRENTRATING" value=" 6.6A " constant="no"/>
+<attribute name="MPN" value="ELC18B8R2L" constant="no"/>
+<attribute name="OC_FARNELL" value="1749212  " constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="PACKAGE" value=" Radial Lead-TH" constant="no"/>
+<attribute name="SUPPLIER" value="PANASONIC" constant="no"/>
+<attribute name="VALUE" value=" 8.2UH " constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -11135,21 +13021,19 @@ Source: http://cache.national.com/ds/LM/LM2574.pdf</description>
 <part name="D3" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="1N581*" device="" package3d_urn="urn:adsk.eagle:package:43421/1" technology="7-B"/>
 <part name="D4" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="1N581*" device="" package3d_urn="urn:adsk.eagle:package:43421/1" technology="7-B"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E3.5-8" package3d_urn="urn:adsk.eagle:package:23360/2" value="470u"/>
-<part name="TR1" library="trafo" library_urn="urn:adsk.eagle:library:394" deviceset="EI42-1" device="" package3d_urn="urn:adsk.eagle:package:28358/1"/>
+<part name="TR1" library="trafo" library_urn="urn:adsk.eagle:library:394" deviceset="EI42-1" device="" package3d_urn="urn:adsk.eagle:package:28358/1" value="44231"/>
 <part name="IC1" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="LM2574?-*" device="N" package3d_urn="urn:adsk.eagle:package:16409/2" technology="5.0"/>
 <part name="D5" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="1N4004" device="" package3d_urn="urn:adsk.eagle:package:43336/1"/>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E2-4" package3d_urn="urn:adsk.eagle:package:23347/1" value="22u"/>
-<part name="L1" library="reflow-oven" deviceset="ELC11D331F" device=""/>
+<part name="L1" library="Panasonic-ELC" deviceset="ELC" device="-11D" technology="11D331F" value=" 330UH "/>
 <part name="D6" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="1N581*" device="" package3d_urn="urn:adsk.eagle:package:43421/1" technology="9-B"/>
-<part name="C3" library="reflow-oven" deviceset="MAL203854221E3" device="">
-<attribute name="CAPACITANCE" value="220u"/>
-</part>
 <part name="X1" library="con-wago_2604" deviceset="2604-1102" device=""/>
 <part name="X2" library="con-wago_2604" deviceset="2604-1102" device=""/>
 <part name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-PAD-ROUND" device="3.0" package3d_urn="urn:adsk.eagle:package:14280/1"/>
 <part name="H2" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-PAD-ROUND" device="3.0" package3d_urn="urn:adsk.eagle:package:14280/1"/>
 <part name="H3" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-PAD-ROUND" device="3.0" package3d_urn="urn:adsk.eagle:package:14280/1"/>
 <part name="H4" library="holes" library_urn="urn:adsk.eagle:library:237" deviceset="MOUNT-PAD-ROUND" device="3.0" package3d_urn="urn:adsk.eagle:package:14280/1"/>
+<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E2-5" package3d_urn="urn:adsk.eagle:package:23346/2" value="220u"/>
 </parts>
 <sheets>
 <sheet>
@@ -11166,17 +13050,15 @@ Source: http://cache.national.com/ds/LM/LM2574.pdf</description>
 <instance part="IC1" gate="G$1" x="99.06" y="60.96"/>
 <instance part="D5" gate="1" x="71.12" y="68.58"/>
 <instance part="C2" gate="G$1" x="83.82" y="60.96"/>
-<instance part="L1" gate="A" x="119.38" y="60.96"/>
+<instance part="L1" gate="A" x="121.92" y="60.96"/>
 <instance part="D6" gate="G$1" x="111.76" y="53.34" rot="R90"/>
-<instance part="C3" gate="A" x="142.24" y="50.8" rot="R90">
-<attribute name="CAPACITANCE" x="139.7" y="53.34" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="X1" gate="G$1" x="-43.18" y="71.12"/>
 <instance part="X2" gate="G$1" x="172.72" y="50.8" rot="R180"/>
 <instance part="H1" gate="G$1" x="129.54" y="38.1"/>
 <instance part="H2" gate="G$1" x="129.54" y="30.48"/>
 <instance part="H3" gate="G$1" x="93.98" y="38.1"/>
 <instance part="H4" gate="G$1" x="93.98" y="30.48"/>
+<instance part="C3" gate="G$1" x="142.24" y="55.88"/>
 </instances>
 <busses>
 </busses>
@@ -11227,13 +13109,10 @@ Source: http://cache.national.com/ds/LM/LM2574.pdf</description>
 <junction x="99.06" y="45.72"/>
 <wire x1="111.76" y1="45.72" x2="124.46" y2="45.72" width="0.1524" layer="91"/>
 <junction x="111.76" y="45.72"/>
-<pinref part="C3" gate="A" pin="11"/>
-<wire x1="124.46" y1="45.72" x2="142.24" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="45.72" x2="142.24" y2="50.8" width="0.1524" layer="91"/>
 <label x="149.86" y="45.72" size="1.778" layer="95"/>
-<wire x1="142.24" y1="45.72" x2="160.02" y2="45.72" width="0.1524" layer="91"/>
-<junction x="142.24" y="45.72"/>
+<wire x1="124.46" y1="45.72" x2="142.24" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="X2" gate="G$1" pin="P1.1"/>
+<wire x1="142.24" y1="45.72" x2="160.02" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="45.72" x2="165.07" y2="50.77" width="0.1524" layer="91"/>
 <wire x1="165.07" y1="50.77" x2="165.07" y2="52.75" width="0.1524" layer="91"/>
 <pinref part="X2" gate="G$1" pin="P1.2"/>
@@ -11255,6 +13134,9 @@ Source: http://cache.national.com/ds/LM/LM2574.pdf</description>
 <wire x1="124.46" y1="40.64" x2="124.46" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="127" y1="38.1" x2="124.46" y2="40.64" width="0.1524" layer="91"/>
 <junction x="124.46" y="40.64"/>
+<pinref part="C3" gate="G$1" pin="-"/>
+<wire x1="142.24" y1="50.8" x2="142.24" y2="45.72" width="0.1524" layer="91"/>
+<junction x="142.24" y="45.72"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -11318,10 +13200,8 @@ Source: http://cache.national.com/ds/LM/LM2574.pdf</description>
 <pinref part="L1" gate="A" pin="1"/>
 <pinref part="IC1" gate="G$1" pin="FB"/>
 <wire x1="142.24" y1="68.58" x2="109.22" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="60.96" x2="142.24" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="60.96" x2="142.24" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="60.96" x2="142.24" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="C3" gate="A" pin="22"/>
-<wire x1="142.24" y1="58.42" x2="142.24" y2="60.96" width="0.1524" layer="91"/>
 <junction x="142.24" y="60.96"/>
 <label x="149.86" y="60.96" size="1.778" layer="95"/>
 <wire x1="142.24" y1="60.96" x2="160.81" y2="60.96" width="0.1524" layer="91"/>
@@ -11331,6 +13211,8 @@ Source: http://cache.national.com/ds/LM/LM2574.pdf</description>
 <wire x1="164.97" y1="56.8" x2="169.07" y2="56.8" width="0.1524" layer="91"/>
 <wire x1="169.07" y1="56.8" x2="169.12" y2="56.75" width="0.1524" layer="91"/>
 <junction x="164.97" y="56.8"/>
+<pinref part="C3" gate="G$1" pin="+"/>
+<wire x1="142.24" y1="58.42" x2="142.24" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -11340,7 +13222,7 @@ Source: http://cache.national.com/ds/LM/LM2574.pdf</description>
 <pinref part="L1" gate="A" pin="2"/>
 <wire x1="111.76" y1="66.04" x2="116.84" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="66.04" x2="116.84" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="60.96" x2="119.38" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="60.96" x2="121.92" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="D6" gate="G$1" pin="C"/>
 <wire x1="111.76" y1="55.88" x2="111.76" y2="66.04" width="0.1524" layer="91"/>
 <junction x="111.76" y="66.04"/>
