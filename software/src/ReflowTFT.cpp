@@ -26,7 +26,7 @@ void ReflowTFT::updateScreenTimeRemaining(int secondsRemaining) {
     itoa(secondsRemaining, text, 10);
     strcat(text, TIME_END_C_STRING);
 
-    updateScreenText(curTimeText, text, TIME_TEXT_SIZE, BLACK, YELLOW, TIME_TEXT_X_POS, TIME_TEXT_Y_POS);
+    updateScreenText(curTimeText, text, TIME_TEXT_SIZE, BLACK, TIME_TEXT_COLOUR, TIME_TEXT_X_POS, TIME_TEXT_Y_POS);
 
     previousSecondsRemaining = secondsRemaining;
     strcpy(curTimeText, text);
@@ -40,7 +40,7 @@ void ReflowTFT::updateScreenTempText(int temp) {
     dtostrf(temp, 3, 0, text);
     strcat(text, TEMP_END_C_STRING);
 
-    updateScreenText(curTempText, text, TEMP_TEXT_SIZE, BLACK, YELLOW, TEMP_TEXT_X_POS, TEMP_TEXT_Y_POS);
+    updateScreenText(curTempText, text, TEMP_TEXT_SIZE, BLACK, TEMP_TEXT_COLOUR, TEMP_TEXT_X_POS, TEMP_TEXT_Y_POS);
 
     previousTemp = temp;
     strcpy(curTempText, text);
@@ -50,7 +50,7 @@ void ReflowTFT::updateScreenTempText(int temp) {
 void ReflowTFT::updateScreenStateText(const char* state) {
   // Only bother updating the screen if it's changed - avoids excessive "blinking"
   if (state != previousState) {
-    updateScreenText(previousState, state, STATE_TEXT_SIZE, BLACK, YELLOW, STATE_TEXT_X_POS, STATE_TEXT_Y_POS);
+    updateScreenText(previousState, state, STATE_TEXT_SIZE, BLACK, STATE_TEXT_COLOUR, STATE_TEXT_X_POS, STATE_TEXT_Y_POS);
     previousState = state;
   }
 }

@@ -31,6 +31,9 @@ static const int16_t STATE_TEXT_Y_POS = 60;
 
 // Colours
 static const uint16_t BUTTON_BORDER_COLOUR = WHITE;
+static const uint16_t TEMP_TEXT_COLOUR = YELLOW;
+static const uint16_t TIME_TEXT_COLOUR = YELLOW;
+static const uint16_t STATE_TEXT_COLOUR = WHITE;
 static const uint16_t START_BUTTON_FILL_COLOUR = GREEN;
 static const uint16_t ABORT_BUTTON_FILL_COLOUR = RED;
 static const uint16_t START_BUTTON_TEXT_COLOUR = BLACK;
