@@ -58,6 +58,8 @@ void loop() {
   mTFTscreen.updateScreenTempText(temp);
   // Update the time remaining in this reflow text readout
   mTFTscreen.updateScreenTimeRemaining(120);
-  
+  // Update the current reflow state
+  mTFTscreen.updateScreenStateText("Preheat");
+
   delay(200);
 }

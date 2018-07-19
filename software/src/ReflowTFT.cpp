@@ -1,9 +1,10 @@
 #include "ReflowTFT.hpp"
 
-char tempText[6] = "";
-char timeText[5] = "";
+char curTempText[6] = "";
+char curTimeText[5] = "";
 int previousTemp = 0;
 int previousSecondsRemaining = 0;
+const char* previousState;
 
 void ReflowTFT::init() {
   initR(INITR_144GREENTAB);
@@ -15,51 +16,65 @@ void ReflowTFT::init() {
 }
 
 void ReflowTFT::drawReflowSelectMenu() {
-  drawStartButton();
+  drawAbortButton();
 }
 
 void ReflowTFT::updateScreenTimeRemaining(int secondsRemaining) {
   // Only bother updating the screen if it's changed - avoids excessive "blinking"
   if (secondsRemaining != previousSecondsRemaining) {
-    setTextSize(2);
-    // Clear off existing
-    setTextColor(BLACK);
-    setCursor(TIME_TEXT_X_POS, TIME_TEXT_Y_POS);
-    print(timeText);
+    char text[5] = "";
+    itoa(secondsRemaining, text, 10);
+    strcat(text, TIME_END_C_STRING);
 
-    // Update text
-    itoa(secondsRemaining, timeText, 10);
-    strcat(timeText, TIME_END_C_STRING);
-    setTextColor(YELLOW);    
-    setCursor(TIME_TEXT_X_POS, TIME_TEXT_Y_POS);
-    print(timeText);
+    updateScreenText(curTimeText, text, TIME_TEXT_SIZE, BLACK, YELLOW, TIME_TEXT_X_POS, TIME_TEXT_Y_POS);
 
     previousSecondsRemaining = secondsRemaining;
+    strcpy(curTimeText, text);
   }
 }
 
 void ReflowTFT::updateScreenTempText(int temp) {
   // Only bother updating the screen if it's changed - avoids excessive "blinking"
   if (temp != previousTemp) {
-    setTextSize(2);        
-    // Clear off existing
-    setTextColor(BLACK);
-    setCursor(TEMP_TEXT_X_POS, TEMP_TEXT_Y_POS);
-    print(tempText);
+    char text[6] = "";
+    dtostrf(temp, 3, 0, text);
+    strcat(text, TEMP_END_C_STRING);
 
-    // Update text
-    dtostrf(temp, 3, 0, tempText);
-    strcat(tempText, TEMP_END_C_STRING);
-    setTextColor(YELLOW);    
-    setCursor(TEMP_TEXT_X_POS, TEMP_TEXT_Y_POS);
-    print(tempText);
+    updateScreenText(curTempText, text, TEMP_TEXT_SIZE, BLACK, YELLOW, TEMP_TEXT_X_POS, TEMP_TEXT_Y_POS);
 
     previousTemp = temp;
+    strcpy(curTempText, text);
   }
+}
+
+void ReflowTFT::updateScreenStateText(const char* state) {
+  // Only bother updating the screen if it's changed - avoids excessive "blinking"
+  if (state != previousState) {
+    updateScreenText(previousState, state, STATE_TEXT_SIZE, BLACK, YELLOW, STATE_TEXT_X_POS, STATE_TEXT_Y_POS);
+    previousState = state;
+  }
+}
+
+void ReflowTFT::updateScreenText(const char* prevText, const char* text, uint8_t size, uint16_t bgColour, uint16_t txtColour, int16_t x, int16_t y) {
+  setTextSize(size);        
+  
+  // Clear off existing
+  setTextColor(bgColour);
+  setCursor(x, y);
+  print(prevText);
+
+  // Update text
+  setTextColor(txtColour);    
+  setCursor(x, y);
+  print(text);
 }
 
 void ReflowTFT::drawStartButton() {
   drawRoundRectangleButton(START_BUTTON_TEXT, START_BUTTON_TEXT_COLOUR, START_BUTTON_FILL_COLOUR, 75, 95);
+}
+
+void ReflowTFT::drawAbortButton() {
+  drawRoundRectangleButton(ABORT_BUTTON_TEXT, ABORT_BUTTON_TEXT_COLOUR, ABORT_BUTTON_FILL_COLOUR, 75, 95);
 }
 
 void ReflowTFT::drawRoundRectangleButton(char* buttonText, uint16_t textColour, uint16_t buttonColour, int16_t x, int16_t y ) {
@@ -81,3 +96,4 @@ void ReflowTFT::drawRoundRectangleButton(char* buttonText, uint16_t textColour, 
   print(buttonText);
 
 }
+
