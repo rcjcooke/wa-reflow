@@ -23,10 +23,21 @@ static const uint8_t ROTATE_270_DEGREES = 3;
 
 // Locations
 static const int16_t TEMP_TEXT_X_POS = 5;
-static const int16_t TEMP_TEXT_Y_POS = 100;
+static const int16_t TEMP_TEXT_Y_POS = 90;
+static const int16_t TIME_TEXT_X_POS = 5;
+static const int16_t TIME_TEXT_Y_POS = 110;
+
+// Colours
+static const uint16_t BUTTON_BORDER_COLOUR = WHITE;
+static const uint16_t START_BUTTON_FILL_COLOUR = GREEN;
+static const uint16_t ABORT_BUTTON_FILL_COLOUR = RED;
+static const uint16_t START_BUTTON_TEXT_COLOUR = BLACK;
+static const uint16_t ABORT_BUTTON_TEXT_COLOUR = WHITE;
 
 // Pre-defined strings
-static const char TEMP_END_C_STRING[] = { (char) 247, 'C', '\0'}; // degrees celcius
+static const char TEMP_END_C_STRING[3] = { (char) 247, 'C', '\0'}; // degrees celcius
+static const char TIME_END_C_STRING[] = "s"; // seconds
+static char START_BUTTON_TEXT[] = "Start"; // has to be non-const to avoid adafruit_gfx gettextbounds issue - annoyingly
 
 class ReflowTFT : Adafruit_ST7735 {
 
@@ -38,6 +49,16 @@ public:
   void init();
   // Update the temperature text display
   void updateScreenTempText(int temp);  
+  // Update the remaining time text display
+  void updateScreenTimeRemaining(int secondsRemaining);
+  // Draw the reflow paste selection menu
+  void drawReflowSelectMenu();
+
+protected:
+  // Draw the start button
+  void drawStartButton();
+  // Draw a round rectangle cornered button around some text
+  void drawRoundRectangleButton(char* buttonText, uint16_t textColour, uint16_t buttonColour, int16_t x, int16_t y );
 };
 
 #endif // __REFLOWTFT_H_INCLUDED__
