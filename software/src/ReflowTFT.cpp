@@ -97,3 +97,6 @@ void ReflowTFT::drawRoundRectangleButton(char* buttonText, uint16_t textColour, 
 
 }
 
+void drawProfileGraph(ReflowProfile* profile) {
+
+}
