@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include "max6675.h"
 #include <SPI.h>
+#include "ReflowModel.hpp"
 #include "ReflowTFT.hpp"
 #include "SR1230.hpp"
-
 
 /**************************
  * Pin Definitions
@@ -24,6 +24,7 @@ static const uint8_t TFT_DC_PIN = 9;
 static const uint8_t TFT_RST_PIN = 8;
 
 // Objects
+ReflowModel mReflowModel = ReflowModel();
 ReflowTFT mTFTscreen = ReflowTFT(TFT_CS_PIN, TFT_DC_PIN, TFT_RST_PIN);
 MAX6675 mThermocouple = MAX6675();
 SR1230 mEncoderSwitch = SR1230(ENCODER_CHANNEL_A_PIN, ENCODER_CHANNEL_B_PIN, ENCODER_SWITCH_PIN);
@@ -33,12 +34,14 @@ SR1230 mEncoderSwitch = SR1230(ENCODER_CHANNEL_A_PIN, ENCODER_CHANNEL_B_PIN, ENC
  **************************/
 void initThermocouple() {
   mThermocouple.begin(THERMOCOUPLE_CS_PIN);
-  // wait for MAX chip to thermally stabilize
+  // Wait for MAX6675 chip to thermally stabilise
   delay(500);
 }
 
 void setup() {
-  // Start serial comms with devices
+  // Start serial comms for debug
+  Serial.begin(115200);
+  // Start SPI comms with devices
   SPI.begin();
   // Set up the display
   mTFTscreen.init();
@@ -47,19 +50,27 @@ void setup() {
   // Set up the user input switch
   mEncoderSwitch.init();
 
-  mTFTscreen.drawReflowSelectMenu();
+  mTFTscreen.drawReflowSelectScreen();
 }
 
 void loop() {
   // Note intentional truncation from double to int for easy comparison
   int temp = mThermocouple.readCelsius();
   
+
+  switch(mReflowModel.getOvenState()) {
+    case ReflowOvenState::UserSelecting:
+    break;
+    case ReflowOvenState::Reflowing:
+    break;
+  }
+
   // Update the temperature text readout
   mTFTscreen.updateScreenTempText(temp);
   // Update the time remaining in this reflow text readout
   mTFTscreen.updateScreenTimeRemaining(120);
   // Update the current reflow state
   mTFTscreen.updateScreenStateText("Preheat");
-
+  
   delay(200);
 }

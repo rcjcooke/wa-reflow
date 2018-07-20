@@ -14,47 +14,60 @@ enum class ReflowState : uint8_t {
 
 class ReflowZone {
 public:
-  ReflowZone(const ReflowState reflowState, const double maxTempGradient,
-             const uint8_t targetTemp, const long durationMilliseconds)
+  ReflowZone(const ReflowState reflowState, const float maxTempGradient,
+             const uint16_t targetTemp, const uint16_t durationSeconds)
       : mReflowState(reflowState), mMaxTempGradient(maxTempGradient),
-        mTargetTemp(targetTemp), mDurationMilliseconds(durationMilliseconds) {}
+        mTargetTemp(targetTemp), mDurationSeconds(durationSeconds) {}
 
   const ReflowState getReflowState() const {return mReflowState;}
-  const double getMaxTempGradient() const {return mMaxTempGradient;}
-  const uint8_t getTargetTemp() const {return mTargetTemp;}
-  const long getDurationMilliseconds() const {return mDurationMilliseconds;}
+  const float getMaxTempGradient() const {return mMaxTempGradient;}
+  const uint16_t getTargetTemp() const {return mTargetTemp;}
+  const uint16_t getDurationSeconds() const {return mDurationSeconds;}
 
 private:
   const ReflowState mReflowState;
-  const double mMaxTempGradient;
-  const uint8_t mTargetTemp;
-  const long mDurationMilliseconds;
+  const float mMaxTempGradient;
+  const uint16_t mTargetTemp;
+  const uint16_t mDurationSeconds;
 };
 
 class ReflowProfile {
 
 public:
 
-  ReflowProfile(const char* name, uint8_t numZones, const ReflowZone zones[]) : mName(name), mZones(zones), mNumZones(numZones) {}
+  ReflowProfile(const char* name, uint8_t numZones, const ReflowZone zones[]) : mName(name), mNumZones(numZones), mZones(zones) {}
 
   const char* getName() const {return mName;}
   const uint8_t getNumZones() const {return mNumZones;}
   const ReflowZone getZone(int zone) const {return mZones[zone];}
   
-  long getTotalDuration() {
+  uint16_t getTotalDuration() {
     if (mTotalDuration != 0) return mTotalDuration;
-    for (int i=0; i<mNumZones; i++) {
-      mTotalDuration+=mZones[i].getDurationMilliseconds();
-    }
+    populateCalcs();
     return mTotalDuration;
   }
+
+  uint16_t getMaxTemp() {
+    if (mMaxTemp != 0) return mMaxTemp;
+    populateCalcs();
+    return mMaxTemp;
+  }  
 
 protected:
   const char* mName;
   const uint8_t mNumZones;
   const ReflowZone* mZones;
-  long mTotalDuration = 0;
+  uint16_t mTotalDuration = 0;
+  uint16_t mMaxTemp = 0;
 
+private:
+
+  void populateCalcs() {
+    for (int i=0; i<mNumZones; i++) {
+      mTotalDuration+=mZones[i].getDurationSeconds();
+      mMaxTemp = max(mMaxTemp, mZones[i].getTargetTemp() );
+    }
+  }
 };
 
 #endif // __REFLOWPROFILE_H_INCLUDED__
