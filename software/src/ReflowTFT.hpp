@@ -60,12 +60,11 @@ static const char TIME_END_C_STRING[] = "s"; // seconds
 static char START_BUTTON_TEXT[] = "Start"; // has to be non-const to avoid adafruit_gfx gettextbounds issue - annoyingly
 static char ABORT_BUTTON_TEXT[] = "Abort"; // has to be non-const to avoid adafruit_gfx gettextbounds issue - annoyingly
 
-
 class ReflowTFT {
 
 public:
   // Constructor
-  ReflowTFT(int8_t cs, int8_t dc, int8_t rst) : mScreen(Adafruit_ST7735(cs, dc, rst)) {};
+  ReflowTFT(ReflowModel* reflowModel, int8_t cs, int8_t dc, int8_t rst) : mScreen(Adafruit_ST7735(cs, dc, rst)), mReflowModel(reflowModel) {};
   
   // Initialise the display
   void init();
@@ -80,8 +79,8 @@ public:
   void drawReflowSelectScreen();
   // Draw the reflow in progress screen
   void drawProgressScreen();
-  // Draw the planned reflow profile graph
-  void drawProfileGraph(ReflowProfile* profile, uint16_t startTemp);
+  // Called whenever the screen needs to check for model updates
+  void refresh();
 
 protected:
   // Updates some text on the screen (clears the previous text off first)
@@ -94,14 +93,19 @@ protected:
   // Draw a round rectangle cornered button around some text
   void drawRoundRectangleButton(char* buttonText, uint16_t textColour, uint16_t buttonColour, int16_t x, int16_t y );
 
-  // Graph plotting helper functions
+  // Draw the planned reflow profile graph
+  void drawProfileGraph(ReflowProfile* profile, uint16_t startTemp);
+  // Print a label on the graph Y Axis
   void printYAxisLabel(int16_t y, int16_t* ptxtby, uint16_t temp);
+  // Print a label on the graph X Axis
   void printXAxisLabel(int16_t x, int16_t* ptxtbex, uint16_t seconds);
 
 private:
 
   // The TFT screen this displays on
   Adafruit_ST7735 mScreen;
+  // Reference to the oven model
+  ReflowModel* mReflowModel;
 
 };
 

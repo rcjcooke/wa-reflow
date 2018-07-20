@@ -17,6 +17,8 @@ public:
 
   // Get the current overall state of the oven
   ReflowOvenState getOvenState() const {return mOvenState;}
+  // Set the current overall state of the oven
+  void setOvenState(ReflowOvenState newState) {mOvenState = newState;}
 
 private:
   // The current state of the oven

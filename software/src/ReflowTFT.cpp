@@ -9,6 +9,8 @@ uint16_t previousTemp = 0;
 uint16_t previousSecondsRemaining = 0;
 const char* previousState;
 
+ReflowModel localModel = ReflowModel();
+
 void ReflowTFT::init() {
   mScreen.initR(INITR_144GREENTAB);
   mScreen.setRotation(ROTATE_0_DEGREES);
@@ -16,6 +18,22 @@ void ReflowTFT::init() {
   mScreen.setTextSize(2);
   // Tried fonts to make it look nicer but had real problems with degree symbol
   mScreen.setFont();
+}
+
+void ReflowTFT::refresh() {
+  // Check the overall state first as this affects the whole screen
+  if (mReflowModel->getOvenState() != localModel.getOvenState()) {
+    switch(mReflowModel->getOvenState()) {
+      case ReflowOvenState::UserSelecting:
+        drawReflowSelectScreen();
+        localModel.setOvenState(ReflowOvenState::UserSelecting);
+        break;
+      case ReflowOvenState::Reflowing:
+        drawProgressScreen();
+        localModel.setOvenState(ReflowOvenState::Reflowing);
+        break;
+    }
+  }
 }
 
 void ReflowTFT::drawReflowSelectScreen() {
@@ -117,9 +135,7 @@ void ReflowTFT::drawProfileGraph(ReflowProfile* profile, uint16_t startTemp) {
   float pixelsPerSecond = (float) GRAPH_WIDTH / (float) profile->getTotalDuration();
   
   // Plot profile
-  uint16_t curPlotTime = 0;
   uint16_t zoneEndTime = 0;
-  uint16_t curTemp = startTemp;
   int16_t startX = GRAPH_ORIGIN_X;
   int16_t startY = GRAPH_ORIGIN_Y - startTemp * pixelsPerDegree;
 

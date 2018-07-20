@@ -25,7 +25,7 @@ static const uint8_t TFT_RST_PIN = 8;
 
 // Objects
 ReflowModel mReflowModel = ReflowModel();
-ReflowTFT mTFTscreen = ReflowTFT(TFT_CS_PIN, TFT_DC_PIN, TFT_RST_PIN);
+ReflowTFT mTFTscreen = ReflowTFT(&mReflowModel, TFT_CS_PIN, TFT_DC_PIN, TFT_RST_PIN);
 MAX6675 mThermocouple = MAX6675();
 SR1230 mEncoderSwitch = SR1230(ENCODER_CHANNEL_A_PIN, ENCODER_CHANNEL_B_PIN, ENCODER_SWITCH_PIN);
 
@@ -56,12 +56,14 @@ void setup() {
 void loop() {
   // Note intentional truncation from double to int for easy comparison
   int temp = mThermocouple.readCelsius();
-  
+  // TODO: set the temp in the model
 
   switch(mReflowModel.getOvenState()) {
     case ReflowOvenState::UserSelecting:
+      mTFTscreen.drawReflowSelectScreen();
     break;
     case ReflowOvenState::Reflowing:
+      mTFTscreen.drawProgressScreen();
     break;
   }
 
