@@ -5,7 +5,6 @@
 
 char curTempText[6] = "";
 char curTimeText[5] = "";
-uint16_t previousTemp = 0;
 uint16_t previousSecondsRemaining = 0;
 const char* previousState;
 
@@ -34,6 +33,12 @@ void ReflowTFT::refresh() {
         break;
     }
   }
+  // Check the temperature
+  if (mReflowModel->getOvenTemp() != localModel.getOvenTemp()) {
+    // Only bother updating the screen if it's changed - avoids excessive "blinking"
+    updateScreenTempText(mReflowModel->getOvenTemp());
+    localModel.setOvenText(mReflowModel->getOvenTemp());
+  }
 }
 
 void ReflowTFT::drawReflowSelectScreen() {
@@ -61,17 +66,13 @@ void ReflowTFT::updateScreenTimeRemaining(uint16_t secondsRemaining) {
 }
 
 void ReflowTFT::updateScreenTempText(uint16_t temp) {
-  // Only bother updating the screen if it's changed - avoids excessive "blinking"
-  if (temp != previousTemp) {
-    char text[6] = "";
-    dtostrf(temp, 3, 0, text);
-    strcat(text, TEMP_END_C_STRING);
+  char text[6] = "";
+  dtostrf(temp, 3, 0, text);
+  strcat(text, TEMP_END_C_STRING);
 
-    updateScreenText(curTempText, text, TEMP_TEXT_SIZE, BLACK, TEMP_TEXT_COLOUR, TEMP_TEXT_X_POS, TEMP_TEXT_Y_POS);
+  updateScreenText(curTempText, text, TEMP_TEXT_SIZE, BLACK, TEMP_TEXT_COLOUR, TEMP_TEXT_X_POS, TEMP_TEXT_Y_POS);
 
-    previousTemp = temp;
-    strcpy(curTempText, text);
-  }
+  strcpy(curTempText, text);
 }
 
 void ReflowTFT::updateScreenStateText(const char* state) {

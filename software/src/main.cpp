@@ -55,8 +55,8 @@ void setup() {
 
 void loop() {
   // Note intentional truncation from double to int for easy comparison
-  int temp = mThermocouple.readCelsius();
-  // TODO: set the temp in the model
+  int16_t temp = mThermocouple.readCelsius();
+  mReflowModel.setOvenTemp(temp);
 
   switch(mReflowModel.getOvenState()) {
     case ReflowOvenState::UserSelecting:
