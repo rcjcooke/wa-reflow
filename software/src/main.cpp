@@ -4,6 +4,7 @@
 #include "ReflowModel.hpp"
 #include "ReflowTFT.hpp"
 #include "SR1230.hpp"
+#include "Refreshable.hpp"
 
 /**************************
  * Pin Definitions
@@ -23,11 +24,17 @@ static const uint8_t TFT_CS_PIN = 7;
 static const uint8_t TFT_DC_PIN = 9;
 static const uint8_t TFT_RST_PIN = 8;
 
+// Refresh rates in milliseconds
+static const long SCREEN_REFRESH_PERIOD = 1000;
+
 // Objects
 ReflowModel mReflowModel = ReflowModel();
 ReflowTFT mTFTscreen = ReflowTFT(&mReflowModel, TFT_CS_PIN, TFT_DC_PIN, TFT_RST_PIN);
 MAX6675 mThermocouple = MAX6675();
 SR1230 mEncoderSwitch = SR1230(ENCODER_CHANNEL_A_PIN, ENCODER_CHANNEL_B_PIN, ENCODER_SWITCH_PIN);
+
+// Update timers
+long mNextScreenRefresh = millis();
 
 /**************************
  * Entry point methods
@@ -58,21 +65,20 @@ void loop() {
   int16_t temp = mThermocouple.readCelsius();
   mReflowModel.setOvenTemp(temp);
 
-  switch(mReflowModel.getOvenState()) {
-    case ReflowOvenState::UserSelecting:
-      mTFTscreen.drawReflowSelectScreen();
-    break;
-    case ReflowOvenState::Reflowing:
-      mTFTscreen.drawProgressScreen();
-    break;
-  }
+  // Refresh the screen for the user
+  checkAndRefresh(&mNextScreenRefresh, SCREEN_REFRESH_PERIOD, &mTFTscreen);
 
-  // Update the temperature text readout
-  mTFTscreen.updateScreenTempText(temp);
   // Update the time remaining in this reflow text readout
   mTFTscreen.updateScreenTimeRemaining(120);
   // Update the current reflow state
   mTFTscreen.updateScreenStateText("Preheat");
   
   delay(200);
+}
+
+void checkAndRefresh(long* nextRefreshTimeMillisPtr, long refreshPeriod, Refreshable* refreshable) {
+  if (millis() > *nextRefreshTimeMillisPtr) {
+    refreshable->refresh();
+    *nextRefreshTimeMillisPtr = millis() + refreshPeriod;
+  }
 }

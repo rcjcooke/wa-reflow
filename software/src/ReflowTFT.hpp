@@ -60,7 +60,7 @@ static const char TIME_END_C_STRING[] = "s"; // seconds
 static char START_BUTTON_TEXT[] = "Start"; // has to be non-const to avoid adafruit_gfx gettextbounds issue - annoyingly
 static char ABORT_BUTTON_TEXT[] = "Abort"; // has to be non-const to avoid adafruit_gfx gettextbounds issue - annoyingly
 
-class ReflowTFT {
+class ReflowTFT : public Refreshable {
 
 public:
   // Constructor
