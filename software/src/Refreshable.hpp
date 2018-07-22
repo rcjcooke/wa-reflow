@@ -6,7 +6,7 @@
  */
 class Refreshable {
 public:
-  virtual ~Refreshable();
+  virtual ~Refreshable() {};
   virtual void refresh() = 0;
 };
 

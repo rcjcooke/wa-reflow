@@ -37,7 +37,7 @@ void ReflowTFT::refresh() {
   if (mReflowModel->getOvenTemp() != localModel.getOvenTemp()) {
     // Only bother updating the screen if it's changed - avoids excessive "blinking"
     updateScreenTempText(mReflowModel->getOvenTemp());
-    localModel.setOvenText(mReflowModel->getOvenTemp());
+    localModel.setOvenTemp(mReflowModel->getOvenTemp());
   }
 }
 

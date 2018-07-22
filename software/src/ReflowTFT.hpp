@@ -5,6 +5,8 @@
 #include "Adafruit_GFX.h"
 #include "Adafruit_ST7735.h"
 
+#include "Refreshable.hpp"
+#include "ReflowModel.hpp"
 #include "reflowprofile/ReflowProfile.hpp"
 
 // Colour definitions
@@ -65,7 +67,7 @@ class ReflowTFT : public Refreshable {
 public:
   // Constructor
   ReflowTFT(ReflowModel* reflowModel, int8_t cs, int8_t dc, int8_t rst) : mScreen(Adafruit_ST7735(cs, dc, rst)), mReflowModel(reflowModel) {};
-  
+
   // Initialise the display
   void init();
 

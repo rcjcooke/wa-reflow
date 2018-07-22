@@ -25,7 +25,7 @@ static const uint8_t TFT_DC_PIN = 9;
 static const uint8_t TFT_RST_PIN = 8;
 
 // Refresh rates in milliseconds
-static const long SCREEN_REFRESH_PERIOD = 1000;
+static const unsigned long SCREEN_REFRESH_PERIOD = 1000;
 
 // Objects
 ReflowModel mReflowModel = ReflowModel();
@@ -34,7 +34,7 @@ MAX6675 mThermocouple = MAX6675();
 SR1230 mEncoderSwitch = SR1230(ENCODER_CHANNEL_A_PIN, ENCODER_CHANNEL_B_PIN, ENCODER_SWITCH_PIN);
 
 // Update timers
-long mNextScreenRefresh = millis();
+unsigned long mNextScreenRefresh = millis();
 
 /**************************
  * Entry point methods
@@ -60,6 +60,13 @@ void setup() {
   mTFTscreen.drawReflowSelectScreen();
 }
 
+void checkAndRefresh(unsigned long* nextRefreshTimeMillisPtr, unsigned long refreshPeriod, Refreshable* refreshable) {
+  if (millis() > *nextRefreshTimeMillisPtr) {
+    refreshable->refresh();
+    *nextRefreshTimeMillisPtr = millis() + refreshPeriod;
+  }
+}
+
 void loop() {
   // Note intentional truncation from double to int for easy comparison
   int16_t temp = mThermocouple.readCelsius();
@@ -74,11 +81,4 @@ void loop() {
   mTFTscreen.updateScreenStateText("Preheat");
   
   delay(200);
-}
-
-void checkAndRefresh(long* nextRefreshTimeMillisPtr, long refreshPeriod, Refreshable* refreshable) {
-  if (millis() > *nextRefreshTimeMillisPtr) {
-    refreshable->refresh();
-    *nextRefreshTimeMillisPtr = millis() + refreshPeriod;
-  }
 }
