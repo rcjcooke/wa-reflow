@@ -2,7 +2,7 @@
 #include "max6675.h"
 #include <SPI.h>
 #include "ReflowModel.hpp"
-#include "ReflowTFT.hpp"
+#include "./reflowscreen/ReflowTFT.hpp"
 #include "SR1230.hpp"
 #include "Refreshable.hpp"
 
@@ -56,8 +56,6 @@ void setup() {
   initThermocouple();
   // Set up the user input switch
   mEncoderSwitch.init();
-
-  mTFTscreen.drawReflowSelectScreen();
 }
 
 void checkAndRefresh(unsigned long* nextRefreshTimeMillisPtr, unsigned long refreshPeriod, Refreshable* refreshable) {
@@ -74,11 +72,6 @@ void loop() {
 
   // Refresh the screen for the user
   checkAndRefresh(&mNextScreenRefresh, SCREEN_REFRESH_PERIOD, &mTFTscreen);
-
-  // Update the time remaining in this reflow text readout
-  mTFTscreen.updateScreenTimeRemaining(120);
-  // Update the current reflow state
-  mTFTscreen.updateScreenStateText("Preheat");
   
   delay(200);
 }
