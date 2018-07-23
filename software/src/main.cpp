@@ -25,7 +25,8 @@ static const uint8_t TFT_DC_PIN = 9;
 static const uint8_t TFT_RST_PIN = 8;
 
 // Refresh rates in milliseconds
-static const unsigned long SCREEN_REFRESH_PERIOD = 1000;
+static const unsigned long SCREEN_REFRESH_PERIOD = 100;
+static const unsigned long USER_SWITCH_REFRESH_PERIOD = 10;
 
 // Global Objects
 ReflowModel gReflowModel = ReflowModel();
@@ -35,6 +36,7 @@ SelectionSwitch gEncoderSwitch = SelectionSwitch(&gReflowModel, ENCODER_CHANNEL_
 
 // Update timers
 unsigned long gNextScreenRefresh = millis();
+unsigned long gSelectionSwitchRefresh = millis();
 
 /**************************
  * Entry point methods
@@ -72,6 +74,8 @@ void loop() {
 
   // Refresh the screen for the user
   checkAndRefresh(&gNextScreenRefresh, SCREEN_REFRESH_PERIOD, &gTFTscreen);
+  // Check to see if the user has done anything
+  checkAndRefresh(&gSelectionSwitchRefresh, USER_SWITCH_REFRESH_PERIOD, &gEncoderSwitch);
   
   delay(200);
 }
