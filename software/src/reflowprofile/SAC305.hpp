@@ -11,8 +11,10 @@ const ReflowZone zones[] = {{ReflowState::Preheat, 1.5, 150, 90},
 
 class SAC305_ : public ReflowProfile {
 
+  char NAME[7] = {'S', 'A', 'C', '3', '0', '5', '\0'};
+
 public:
-  SAC305_() : ReflowProfile("SAC305", (uint8_t)5, zones){};
+  SAC305_() : ReflowProfile(NAME, (uint8_t)5, zones){};
 };
 
 const SAC305_ SAC305 = SAC305_();

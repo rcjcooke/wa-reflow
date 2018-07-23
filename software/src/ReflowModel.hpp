@@ -2,6 +2,7 @@
 #define __REFLOWMODEL_H_INCLUDED__
 
 #include "reflowprofile/ReflowProfile.hpp"
+#include "reflowprofile/SAC305.hpp"
 
 enum class ReflowOvenState : uint8_t {
   UserSelecting,
@@ -29,9 +30,9 @@ public:
   // Set the oven temperature
   void setOvenTemp(int16_t temp) {mOvenTemp = temp;}
   // Get the number of profiles this oven knows about
-  uint8_t getNumProfiles() const {return mNumProfiles;}
+  const uint8_t getNumProfiles() const {return mNumProfiles;}
   // Get the full set of profiles this oven supports
-  ReflowProfile** getReflowProfiles() const {return mReflowProfiles;}
+  ReflowProfile* getReflowProfile(int profileIndex) const {return mReflowProfiles[profileIndex];}
 
   // Helper method: Translates an oven state into a human readable string
   static const char* translateOvenState(ReflowOvenState ovenState) {
@@ -56,9 +57,9 @@ private:
   // The oven temperature
   int16_t mOvenTemp;
   // The list of reflow profiles
-  ReflowProfile** mReflowProfiles;
+  ReflowProfile* mReflowProfiles[10] = {(SAC305_*) new SAC305_(), new ReflowProfile("Test2", 0, nullptr), new ReflowProfile("Test3", 0, nullptr), new ReflowProfile("Test4", 0, nullptr), new ReflowProfile("Test5", 0, nullptr), new ReflowProfile("Test6", 0, nullptr), new ReflowProfile("Test7", 0, nullptr), new ReflowProfile("Test8", 0, nullptr), new ReflowProfile("Test9", 0, nullptr), new ReflowProfile("Test10", 0, nullptr)};
   // The number of reflow profiles in memory
-  uint8_t mNumProfiles;
+  const uint8_t mNumProfiles = 10;
 
   // The zone of the profile we're currently in
   uint8_t mProfileZone;

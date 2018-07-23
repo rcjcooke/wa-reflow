@@ -12,7 +12,8 @@ public:
   SerialDebugger_();
 
   void updateValue(String variable, String value);
-
+  
+  void updateValue(String variable, char* value) {updateValue(variable, String(value));}
   void updateValue(String variable, float value) {updateValue(variable, String(value));}
   void updateValue(String variable, int value) {updateValue(variable, String(value));}
   void updateValue(String variable, long value) {updateValue(variable, String(value));}

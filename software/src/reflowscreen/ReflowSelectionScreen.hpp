@@ -29,13 +29,15 @@ protected:
   static constexpr int16_t PROFILE_LIST_Y = 5;
   static constexpr int16_t LIST_TRIANGLE_ARROW_WIDTH = 10;
   static constexpr int16_t PROFILE_LIST_HEIGHT = 80;
+  static constexpr int16_t PROFILE_LIST_CELL_BORDER = 2;
 
   // Colours
   static constexpr uint16_t TEMP_TEXT_COLOUR = YELLOW;
   static constexpr uint16_t START_BUTTON_FILL_COLOUR = GREEN;
   static constexpr uint16_t START_BUTTON_TEXT_COLOUR = BLACK;
   static constexpr uint16_t LIST_HIGHLIGHT_COLOUR = BLUE;
-  static constexpr uint16_t LIST_ARROW_COLOUR = BLUE;
+  static constexpr uint16_t LIST_ARROW_COLOUR = GREEN;
+  static constexpr uint16_t PROFILE_LIST_ITEM_TEXT_COLOUR = WHITE;
 
   // Sizes
   static constexpr uint8_t TEMP_TEXT_SIZE = 2;
