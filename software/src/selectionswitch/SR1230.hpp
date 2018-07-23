@@ -8,10 +8,9 @@ class SR1230 {
 public:
   SR1230(uint8_t pinA, uint8_t pinB, uint8_t pinS) : mChannelAPin(pinA), mChannelBPin(pinA), mSwitchPin(pinA) {};
 
-  // Call this after creation. Warning: This will attach 2 interrupts
-  void init();
-
-protected:
+  const uint8_t getChannelAPin() const {return mChannelAPin;}
+  const uint8_t getChannelBPin() const {return mChannelBPin;}
+  const uint8_t getSwitchPin() const {return mSwitchPin;}
 
 private:
 

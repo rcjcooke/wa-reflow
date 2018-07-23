@@ -1,5 +1,4 @@
 #include "ReflowTFT.hpp"
-#include "SerialDebugger.hpp"
 
 ReflowOvenState localOvenState = ReflowOvenState::UserSelecting;
 
@@ -14,8 +13,6 @@ void ReflowTFT::init() {
 }
 
 void ReflowTFT::refresh() {
-  SerialDebugger.updateValue("localOvenState", ReflowModel::translateOvenState(localOvenState));
-
   // Check the overall state first as this affects the whole screen
   if (mReflowModel->getOvenState() != localOvenState) {
     drawScreen();

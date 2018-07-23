@@ -25,14 +25,21 @@ public:
   ReflowOvenState getOvenState() const {return mOvenState;}
   // Get the oven temperature
   int16_t getOvenTemp() const {return mOvenTemp;}
-  // Set the current overall state of the oven
-  void setOvenState(ReflowOvenState newState) {mOvenState = newState;}
-  // Set the oven temperature
-  void setOvenTemp(int16_t temp) {mOvenTemp = temp;}
   // Get the number of profiles this oven knows about
   const uint8_t getNumProfiles() const {return mNumProfiles;}
-  // Get the full set of profiles this oven supports
+  // Get a specific reflow profile that this oven supports
   ReflowProfile* getReflowProfile(int profileIndex) const {return mReflowProfiles[profileIndex];}
+  // Get the user's currently selected profile
+  uint8_t getSelectedProfileIndex() const {return mSelectedProfileIndex;}
+
+  // Set the current overall state of the oven
+  void setOvenState(ReflowOvenState newState) {mOvenState = newState;}
+  // Switches the oven to the other state 
+  void toggleOvenState();
+  // Set the oven temperature
+  void setOvenTemp(int16_t temp) {mOvenTemp = temp;}
+  // Update the user's selection - sign indicates direction
+  void moveUserSelection(long int numberMoved);
 
   // Helper method: Translates an oven state into a human readable string
   static const char* translateOvenState(ReflowOvenState ovenState) {
@@ -60,6 +67,8 @@ private:
   ReflowProfile* mReflowProfiles[10] = {(SAC305_*) new SAC305_(), new ReflowProfile("Test2", 0, nullptr), new ReflowProfile("Test3", 0, nullptr), new ReflowProfile("Test4", 0, nullptr), new ReflowProfile("Test5", 0, nullptr), new ReflowProfile("Test6", 0, nullptr), new ReflowProfile("Test7", 0, nullptr), new ReflowProfile("Test8", 0, nullptr), new ReflowProfile("Test9", 0, nullptr), new ReflowProfile("Test10", 0, nullptr)};
   // The number of reflow profiles in memory
   const uint8_t mNumProfiles = 10;
+  // The user's selected profile index
+  uint8_t mSelectedProfileIndex = 0;
 
   // The zone of the profile we're currently in
   uint8_t mProfileZone;

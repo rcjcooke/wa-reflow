@@ -39,7 +39,7 @@ void ReflowSelectionScreen::drawProfileList() {
   // Draw the list
   uint8_t listScreenStartIndex =
       mReflowModel->getNumProfiles() > MAX_LIST_LENGTH
-          ? min(mSelectedProfileIndex,
+          ? min(mReflowModel->getSelectedProfileIndex(),
                 mReflowModel->getNumProfiles() - MAX_LIST_LENGTH + 1)
           : 0;
 
@@ -48,7 +48,7 @@ void ReflowSelectionScreen::drawProfileList() {
        i < min(listScreenStartIndex + MAX_LIST_LENGTH,
                mReflowModel->getNumProfiles());
        i++) {
-    drawListCell(visibleListIndex, i, i == mSelectedProfileIndex);
+    drawListCell(visibleListIndex, i, i == mReflowModel->getSelectedProfileIndex());
     visibleListIndex++;
   }
 

@@ -70,7 +70,6 @@ private:
 
   ReflowModel mLocalModel = ReflowModel();
   char mCurTempText[6];
-  uint8_t mSelectedProfileIndex = 0;
 
 };
 
