@@ -13,7 +13,7 @@ void ReflowProgressScreen::refresh() {
 
 void ReflowProgressScreen::drawScreen() {
   drawAbortButton();
-  drawProfileGraph(new SAC305(), 20);
+  drawProfileGraph(new SAC305_(), 20);
   refresh();
 }
 

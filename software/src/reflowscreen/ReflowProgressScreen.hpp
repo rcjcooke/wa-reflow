@@ -6,8 +6,6 @@
 #include "Adafruit_ST7735.h"
 
 #include "ReflowScreen.hpp"
-#include "../Refreshable.hpp"
-#include "../ReflowModel.hpp"
 
 class ReflowProgressScreen : public ReflowScreen {
 

@@ -1,7 +1,7 @@
 #ifndef __REFLOWPROFILE_H_INCLUDED__
 #define __REFLOWPROFILE_H_INCLUDED__
 
-#include <stdint.h>
+#include <Arduino.h>
 
 enum class ReflowState : uint8_t {
   Preheat,
@@ -35,9 +35,10 @@ class ReflowProfile {
 
 public:
 
-  ReflowProfile(const char* name, uint8_t numZones, const ReflowZone zones[]) : mName(name), mNumZones(numZones), mZones(zones) {}
+  ReflowProfile(char* name, uint8_t numZones, const ReflowZone zones[]) : mName(name), mNumZones(numZones), mZones(zones) {}
 
-  const char* getName() const {return mName;}
+  // Annoyingly this has to be non-const to avoid Adafruit_gfx library getTextBounds issue
+  char* getName() const {return mName;}
   const uint8_t getNumZones() const {return mNumZones;}
   const ReflowZone getZone(int zone) const {return mZones[zone];}
   
@@ -54,7 +55,8 @@ public:
   }  
 
 protected:
-  const char* mName;
+  // Annoyingly this has to be non-const to avoid Adafruit_gfx library getTextBounds issue
+  char* mName;
   const uint8_t mNumZones;
   const ReflowZone* mZones;
   uint16_t mTotalDuration = 0;

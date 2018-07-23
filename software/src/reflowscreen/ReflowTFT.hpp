@@ -41,6 +41,10 @@ public:
   // Called whenever the screen needs to check for model updates
   void refresh();
 
+protected:
+  // Draw the correct screen for the oven state
+  void drawScreen();
+
 private:
   // The TFT screen this displays on
   Adafruit_ST7735 mScreen;
@@ -51,6 +55,9 @@ private:
   ReflowSelectionScreen mReflowSelectionScreen;
   // The progress screen
   ReflowProgressScreen mReflowProgressScreen;
+
+  // The current screen
+  ReflowScreen* mCurrentScreen;
 };
 
 #endif // __REFLOWTFT_H_INCLUDED__

@@ -16,6 +16,7 @@ public:
   void updateValue(String variable, float value) {updateValue(variable, String(value));}
   void updateValue(String variable, int value) {updateValue(variable, String(value));}
   void updateValue(String variable, long value) {updateValue(variable, String(value));}
+  void updateValue(String variable, unsigned long value) {updateValue(variable, String(value));}  
   void updateValue(String variable, uint8_t value) {updateValue(variable, String(value));}
   void updateValue(String variable, uint16_t value) {updateValue(variable, String(value));}
 

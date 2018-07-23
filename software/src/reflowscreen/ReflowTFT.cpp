@@ -1,6 +1,7 @@
 #include "ReflowTFT.hpp"
+#include "SerialDebugger.hpp"
 
-ReflowOvenState localOvenState;
+ReflowOvenState localOvenState = ReflowOvenState::UserSelecting;
 
 void ReflowTFT::init() {
   mScreen.initR(INITR_144GREENTAB);
@@ -8,20 +9,32 @@ void ReflowTFT::init() {
   mScreen.fillScreen(BLACK);
   // Tried fonts to make it look nicer but had real problems with degree symbol - so now it's just default
   mScreen.setFont();
+  // Draw the initial screen
+  drawScreen();
 }
 
 void ReflowTFT::refresh() {
+  SerialDebugger.updateValue("localOvenState", ReflowModel::translateOvenState(localOvenState));
+
   // Check the overall state first as this affects the whole screen
   if (mReflowModel->getOvenState() != localOvenState) {
-    switch(mReflowModel->getOvenState()) {
-      case ReflowOvenState::UserSelecting:
-        mReflowSelectionScreen.drawScreen();
-        localOvenState = ReflowOvenState::UserSelecting;
-        break;
-      case ReflowOvenState::Reflowing:
-        mReflowProgressScreen.drawScreen();
-        localOvenState = ReflowOvenState::Reflowing;
-        break;
-    }
+    drawScreen();
+    localOvenState = mReflowModel->getOvenState();
+  }
+
+  // Refresh the screen
+  mCurrentScreen->refresh();
+}
+
+void ReflowTFT::drawScreen() {
+  switch(mReflowModel->getOvenState()) {
+    case ReflowOvenState::UserSelecting:
+      mReflowSelectionScreen.drawScreen();
+      mCurrentScreen = &mReflowSelectionScreen;
+      break;
+    case ReflowOvenState::Reflowing:
+      mReflowProgressScreen.drawScreen();
+      mCurrentScreen = &mReflowProgressScreen;
+      break;
   }
 }

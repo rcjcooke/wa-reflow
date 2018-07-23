@@ -6,6 +6,8 @@
 #include "SR1230.hpp"
 #include "Refreshable.hpp"
 
+#include "SerialDebugger.hpp"
+
 /**************************
  * Pin Definitions
  **************************/
@@ -60,6 +62,7 @@ void setup() {
 
 void checkAndRefresh(unsigned long* nextRefreshTimeMillisPtr, unsigned long refreshPeriod, Refreshable* refreshable) {
   if (millis() > *nextRefreshTimeMillisPtr) {
+    SerialDebugger.updateValue("nextRefreshTimeMillisPtr", *nextRefreshTimeMillisPtr);
     refreshable->refresh();
     *nextRefreshTimeMillisPtr = millis() + refreshPeriod;
   }

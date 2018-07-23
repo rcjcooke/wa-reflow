@@ -6,8 +6,6 @@
 #include "Adafruit_ST7735.h"
 
 #include "ReflowScreen.hpp"
-#include "../Refreshable.hpp"
-#include "../ReflowModel.hpp"
 
 class ReflowSelectionScreen : public ReflowScreen {
 
@@ -26,15 +24,25 @@ protected:
 
   // Locations and lengths
   static constexpr int16_t TEMP_TEXT_X_POS = 5;
-  static constexpr int16_t TEMP_TEXT_Y_POS = 90;
+  static constexpr int16_t TEMP_TEXT_Y_POS = 102;
+  static constexpr int16_t PROFILE_LIST_X = 5;
+  static constexpr int16_t PROFILE_LIST_Y = 5;
+  static constexpr int16_t LIST_TRIANGLE_ARROW_WIDTH = 10;
+  static constexpr int16_t PROFILE_LIST_HEIGHT = 80;
 
   // Colours
   static constexpr uint16_t TEMP_TEXT_COLOUR = YELLOW;
-  static constexpr uint16_t START_BUTTON_FILL_COLOUR = RED;
-  static constexpr uint16_t START_BUTTON_TEXT_COLOUR = WHITE;
+  static constexpr uint16_t START_BUTTON_FILL_COLOUR = GREEN;
+  static constexpr uint16_t START_BUTTON_TEXT_COLOUR = BLACK;
+  static constexpr uint16_t LIST_HIGHLIGHT_COLOUR = BLUE;
+  static constexpr uint16_t LIST_ARROW_COLOUR = BLUE;
 
   // Sizes
   static constexpr uint8_t TEMP_TEXT_SIZE = 2;
+  static constexpr uint8_t LIST_TEXT_SIZE = 2;
+  
+  // UI Model parameters
+  static constexpr uint8_t MAX_LIST_LENGTH = 4;
 
   // Pre-defined strings
   /** 
@@ -47,11 +55,20 @@ protected:
 
   // Draw the abort button
   void drawStartButton();
+  // Draws the selection list
+  void drawProfileList();
+  // Draws a single cell in the list
+  void drawListCell(uint8_t visibleListIndex, uint8_t profileIndex, bool selected);
+  // Draws the list up arrow indicator
+  void drawUpArrow();
+  // Draws the list down arrow indicator
+  void drawDownArrow();
 
 private:
 
   ReflowModel mLocalModel = ReflowModel();
   char mCurTempText[6];
+  uint8_t mSelectedProfileIndex = 0;
 
 };
 
