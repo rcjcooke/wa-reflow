@@ -1,8 +1,8 @@
 #include <Arduino.h>
-#include "max6675.h"
+#include <max6675.h>
 #include <SPI.h>
 #include "ReflowModel.hpp"
-#include "reflowscreen/ReflowTFT.hpp"
+#include "reflowtft/ReflowTFT.hpp"
 #include "selectionswitch/SelectionSwitch.hpp"
 #include "Refreshable.hpp"
 
@@ -17,7 +17,7 @@
  * device).
  */
 static const uint8_t ENCODER_CHANNEL_A_PIN = 2;
-static const uint8_t ENCODER_CHANNEL_B_PIN = 7;
+static const uint8_t ENCODER_CHANNEL_B_PIN = 5;
 static const uint8_t ENCODER_SWITCH_PIN = 3;
 static const uint8_t THERMOCOUPLE_CS_PIN = 4;
 static const uint8_t TFT_CS_PIN = 7;
