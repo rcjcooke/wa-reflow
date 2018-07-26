@@ -1,5 +1,7 @@
 #include "ReflowScreen.hpp"
 
+constexpr char ReflowScreen::TEMP_END_C_STRING[];
+
 void ReflowScreen::updateScreenText(const char* prevText, const char* text, uint8_t size, uint16_t bgColour, uint16_t txtColour, int16_t x, int16_t y) {
   mScreen->setTextSize(size);        
   

@@ -1,5 +1,7 @@
 #include "ReflowProgressScreen.hpp"
 
+constexpr char ReflowProgressScreen::TIME_END_C_STRING[];
+
 void ReflowProgressScreen::refresh() {
   // Check the temperature
   int16_t ovenTemp = mReflowModel->getOvenTemp(); 
@@ -18,7 +20,7 @@ void ReflowProgressScreen::refresh() {
 
 void ReflowProgressScreen::drawScreen() {
   drawAbortButton();
-  drawProfileGraph(mReflowModel->getReflowProfile(mReflowModel->getSelectedProfileIndex), mReflowModel->getOvenTemp());
+  drawProfileGraph(mReflowModel->getReflowProfile(mReflowModel->getSelectedProfileIndex()), mReflowModel->getOvenTemp());
   refresh();
 }
 
@@ -36,7 +38,7 @@ void ReflowProgressScreen::updateScreenTimeRemaining(uint16_t secondsRemaining) 
 void ReflowProgressScreen::updateScreenTempText(uint16_t temp) {
   char text[6] = "";
   dtostrf(temp, 3, 0, text);
-  strcat(text, TEMP_END_C_STRING);
+  strcat(text, ReflowScreen::TEMP_END_C_STRING);
 
   updateScreenText(mCurTempText, text, TEMP_TEXT_SIZE, BLACK, TEMP_TEXT_COLOUR, TEMP_TEXT_X_POS, TEMP_TEXT_Y_POS);
 
