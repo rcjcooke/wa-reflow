@@ -4,6 +4,7 @@
 #include "ReflowModel.hpp"
 #include "reflowtft/ReflowTFT.hpp"
 #include "selectionswitch/SelectionSwitch.hpp"
+#include "ReflowHeater.hpp"
 #include "Refreshable.hpp"
 
 /**************************
@@ -23,20 +24,25 @@ static const uint8_t THERMOCOUPLE_CS_PIN = 4;
 static const uint8_t TFT_CS_PIN = 7;
 static const uint8_t TFT_DC_PIN = 9;
 static const uint8_t TFT_RST_PIN = 8;
+static const uint8_t LOW_POWER_HEATING_ELEMENT_PIN = 10;
+static const uint8_t HIGH_POWER_HEATING_ELEMENT_PIN = 6;
 
 // Refresh rates in milliseconds
 static const unsigned long SCREEN_REFRESH_PERIOD = 100;
 static const unsigned long USER_SWITCH_REFRESH_PERIOD = 10;
+static const unsigned long HEATER_REFRESH_PERIOD = 1000;
 
 // Global Objects
 ReflowModel gReflowModel = ReflowModel();
 ReflowTFT gTFTscreen = ReflowTFT(&gReflowModel, TFT_CS_PIN, TFT_DC_PIN, TFT_RST_PIN);
 MAX6675 gThermocouple = MAX6675();
 SelectionSwitch gSelectionSwitch = SelectionSwitch(&gReflowModel, ENCODER_CHANNEL_A_PIN, ENCODER_CHANNEL_B_PIN, ENCODER_SWITCH_PIN);
+ReflowHeater gReflowHeater = ReflowHeater(&gReflowModel, LOW_POWER_HEATING_ELEMENT_PIN, HIGH_POWER_HEATING_ELEMENT_PIN);
 
 // Update timers
 unsigned long gNextScreenRefresh = millis();
-unsigned long gSelectionSwitchRefresh = millis();
+unsigned long gNextSelectionSwitchRefresh = millis();
+unsigned long gNextHeaterRefresh = millis();
 
 /**************************
  * Entry point methods
@@ -58,6 +64,8 @@ void setup() {
   initThermocouple();
   // Set up the user input switch
   gSelectionSwitch.init();
+  // Set up the heater
+  gReflowHeater.init();
 }
 
 void checkAndRefresh(unsigned long* nextRefreshTimeMillisPtr, unsigned long refreshPeriod, Refreshable* refreshable) {
@@ -73,9 +81,11 @@ void loop() {
   gReflowModel.setOvenTemp(temp);
 
   // Check to see if the user has done anything
-  checkAndRefresh(&gSelectionSwitchRefresh, USER_SWITCH_REFRESH_PERIOD, &gSelectionSwitch);
+  checkAndRefresh(&gNextSelectionSwitchRefresh, USER_SWITCH_REFRESH_PERIOD, &gSelectionSwitch);
   // Refresh the screen for the user
   checkAndRefresh(&gNextScreenRefresh, SCREEN_REFRESH_PERIOD, &gTFTscreen);
+  // Make sure the heater is doing sensible things
+  checkAndRefresh(&gNextHeaterRefresh, HEATER_REFRESH_PERIOD, &gReflowHeater);
 
   delay(200);
 }

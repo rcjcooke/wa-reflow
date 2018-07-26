@@ -27,6 +27,20 @@ void ReflowModel::toggleOvenState() {
       break;
     case ReflowOvenState::Reflowing:
       mOvenState = ReflowOvenState::UserSelecting;
+      mReflowStartTimeMillis = millis();
+      // Set the start temperature of the first zone in the active profile
+      mReflowProfiles[mSelectedProfileIndex]->getZone(0)->setStartTemp(mOvenTemp);
       break;
+  }
+}
+
+int16_t ReflowModel::determineTargetProfileTempNow() {
+  if (mOvenState == ReflowOvenState::Reflowing) {
+    long durationSinceStart = millis() - mReflowStartTimeMillis;
+    int zoneIndex = mReflowProfiles[mSelectedProfileIndex]->getZoneIndexByDurationSinceProfileStart(durationSinceStart);
+    ReflowZone* reflowZone = mReflowProfiles[mSelectedProfileIndex]->getZone(zoneIndex);
+    return durationSinceStart / 1000 * reflowZone->getTargetTempGradient();
+  } else {
+    return 0;
   }
 }

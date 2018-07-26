@@ -32,6 +32,9 @@ public:
   // Get the user's currently selected profile
   uint8_t getSelectedProfileIndex() const {return mSelectedProfileIndex;}
 
+  // Determines what the temperature should be at this point in an active profile
+  int16_t determineTargetProfileTempNow();
+
   // Set the current overall state of the oven
   void setOvenState(ReflowOvenState newState) {mOvenState = newState;}
   // Switches the oven to the other state 
@@ -70,7 +73,8 @@ private:
   const uint8_t mNumProfiles = 10;
   // The user's selected profile index
   uint8_t mSelectedProfileIndex = 0;
-
+  // The system start time of the current reflow
+  long mReflowStartTimeMillis = 0;
   // The zone of the profile we're currently in
   uint8_t mProfileZone;
 
