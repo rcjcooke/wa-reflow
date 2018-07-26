@@ -16,7 +16,7 @@ public:
   // Initialise the oven in the user selection state
   ReflowModel() {
     initialiseModel();
-  };
+  }
 
   // Populates the model
   void initialiseModel();
@@ -29,6 +29,8 @@ public:
   const uint8_t getNumProfiles() const {return mNumProfiles;}
   // Get a specific reflow profile that this oven supports
   ReflowProfile* getReflowProfile(int profileIndex) const {return mReflowProfiles[profileIndex];}
+  // Get the user selected reflow profile
+  ReflowProfile* getReflowProfile() const {return mReflowProfiles[mSelectedProfileIndex];}
   // Get the user's currently selected profile
   uint8_t getSelectedProfileIndex() const {return mSelectedProfileIndex;}
   // Get the time that the last reflow starting running

@@ -77,14 +77,16 @@ protected:
   
 private:
 
-  ReflowModel mLocalModel = ReflowModel();
+  // Various current state variables to compare against the model
   char mCurTempText[6];
   char mCurTimeText[5];
-  uint16_t mPreviousSecondsRemaining = 0;
+  int16_t mDisplayedOvenTemp = 0; 
+  uint16_t mDisplayedSecondsRemaining = 0;
   const char* mPreviousState;
   long mMillisPerPixel = 0;
   unsigned long mNextGraphPlotPointMillis = 0;
   float mDegreesPerPixel = 0.0;
+  ReflowState mDisplayedReflowState;
 
 };
 

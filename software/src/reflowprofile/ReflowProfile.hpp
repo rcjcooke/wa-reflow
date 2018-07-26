@@ -8,8 +8,8 @@ enum class ReflowState : uint8_t {
   Soak,
   Ramp,
   Reflow,
-  Solidifying,
-  Cooling
+  Cooling,
+  Done
 };
 
 class ReflowZone {
@@ -30,6 +30,18 @@ public:
   void setStartTimeSeconds(uint16_t startTime) {mStartTimeSeconds = startTime;}
   void setStartTemp(int16_t startTemp) {mStartTemp = startTemp;}
   void setTargetTempGradient(float targetTempGradient) {mTargetTempGradient = targetTempGradient;}
+
+  static const char* translateReflowState(ReflowState reflowState) {
+    switch(reflowState) {
+      case ReflowState::Preheat: return "Preheat";
+      case ReflowState::Soak: return "Soak";
+      case ReflowState::Ramp: return "Ramp";
+      case ReflowState::Reflow: return "Reflow";
+      case ReflowState::Cooling: return "Cooling";
+      case ReflowState::Done: return "Done";
+      default: return "Unknown";
+    }
+  }
 
 private:
   const ReflowState mReflowState;

@@ -3,19 +3,30 @@
 constexpr char ReflowProgressScreen::TIME_END_C_STRING[];
 
 void ReflowProgressScreen::refresh() {
+  /** 
+   * Only bother updating the screen if the displayed data has changed - avoids excessive 
+   * "blinking"
+   */
+
   // Check the temperature
   int16_t ovenTemp = mReflowModel->getOvenTemp();
-  if (ovenTemp != mLocalModel.getOvenTemp()) {
-    // Only bother updating the screen if it's changed - avoids excessive
-    // "blinking"
+  if (ovenTemp != mDisplayedOvenTemp) {
     updateScreenTempText(ovenTemp);
-    mLocalModel.setOvenTemp(ovenTemp);
+    mDisplayedOvenTemp = ovenTemp;
   }
   // Update the remaining time
   uint16_t timeRemaining = mReflowModel->determineTimeRemaining();
-  if (timeRemaining != mPreviousSecondsRemaining) {
+  if (timeRemaining != mDisplayedSecondsRemaining) {
     updateScreenTimeRemaining(timeRemaining);
-    mPreviousSecondsRemaining = timeRemaining;
+    mDisplayedSecondsRemaining = timeRemaining;
+  }
+  // Update the progress state
+  long durationSinceStart = millis() - mReflowModel->getReflowStartTimeMillis();
+  int reflowZoneIndex = mReflowModel->getReflowProfile()->getZoneIndexByDurationSinceProfileStart(durationSinceStart);
+  ReflowState reflowState = mReflowModel->getReflowProfile()->getZone(reflowZoneIndex)->getReflowState();
+  if (mDisplayedReflowState != reflowState) {
+    updateScreenStateText(ReflowZone::translateReflowState(reflowState));
+    mDisplayedReflowState = reflowState;
   }
   // Update graph
   if (millis() >= mNextGraphPlotPointMillis) {
@@ -27,7 +38,7 @@ void ReflowProgressScreen::refresh() {
 void ReflowProgressScreen::drawScreen() {
   drawAbortButton();
   drawProfileGraph(
-      mReflowModel->getReflowProfile(mReflowModel->getSelectedProfileIndex()),
+      mReflowModel->getReflowProfile(),
       mReflowModel->getOvenTemp());
   refresh();
 }
@@ -41,7 +52,6 @@ void ReflowProgressScreen::updateScreenTimeRemaining(
   updateScreenText(mCurTimeText, text, TIME_TEXT_SIZE, BLACK, TIME_TEXT_COLOUR,
                    TIME_TEXT_X_POS, TIME_TEXT_Y_POS);
 
-  mPreviousSecondsRemaining = secondsRemaining;
   strcpy(mCurTimeText, text);
 }
 
