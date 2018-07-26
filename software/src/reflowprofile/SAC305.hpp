@@ -3,7 +3,7 @@
 
 #include "ReflowProfile.hpp"
 
-const ReflowZone zones[] = {{ReflowState::Preheat, 1.5, 150, 90},
+static ReflowZone zones[] = {{ReflowState::Preheat, 1.5, 150, 90},
                             {ReflowState::Soak, 1.5, 175, 90},
                             {ReflowState::Ramp, 1.5, 217, 30},
                             {ReflowState::Reflow, 1.5, 249, 30},

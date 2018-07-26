@@ -71,9 +71,9 @@ void ReflowProgressScreen::drawProfileGraph(ReflowProfile* profile, uint16_t sta
   int16_t ptxtby = GRAPH_ORIGIN_Y, ptxtbex = GRAPH_ORIGIN_X;
 
   for (int i=0; i<profile->getNumZones(); i++) {
-    ReflowZone zone = profile->getZone(i);
-    zoneEndTime += zone.getDurationSeconds();
-    uint8_t zoneEndTemp = zone.getTargetTemp();
+    ReflowZone* zone = profile->getZone(i);
+    zoneEndTime += zone->getDurationSeconds();
+    uint8_t zoneEndTemp = zone->getTargetTemp();
 
     int16_t endY = GRAPH_ORIGIN_Y - zoneEndTemp * pixelsPerDegree;
     int16_t endX = GRAPH_ORIGIN_X + zoneEndTime * pixelsPerSecond;

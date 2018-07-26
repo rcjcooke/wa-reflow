@@ -2,6 +2,7 @@
 #define __REFLOWHEATER_H_INCLUDED__
 
 #include "ReflowModel.hpp"
+#include "Refreshable.hpp"
 #include <stdint.h>
 
 class ReflowHeater : public Refreshable {

@@ -1,7 +1,11 @@
 #include "ReflowHeater.hpp"
 
 void ReflowHeater::init() {
+  pinMode(mHighPowerHeatingElementPin, OUTPUT);
+  pinMode(mLowPowerHeatingElementPin, OUTPUT);
 
+  turnOffHighPowerElement();
+  turnOffLowPowerElement();
 }
 
 void ReflowHeater::refresh() {
