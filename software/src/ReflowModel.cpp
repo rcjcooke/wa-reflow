@@ -44,3 +44,7 @@ int16_t ReflowModel::determineTargetProfileTempNow() {
     return 0;
   }
 }
+
+int16_t ReflowModel::determineTimeRemaining() {
+  return mReflowProfiles[mSelectedProfileIndex]->getTotalDuration() - (millis() - mReflowStartTimeMillis) / 1000;
+}

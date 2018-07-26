@@ -34,6 +34,8 @@ public:
 
   // Determines what the temperature should be at this point in an active profile
   int16_t determineTargetProfileTempNow();
+  // Determine how long is left to go on the current profile reflow
+  int16_t determineTimeRemaining();
 
   // Set the current overall state of the oven
   void setOvenState(ReflowOvenState newState) {mOvenState = newState;}

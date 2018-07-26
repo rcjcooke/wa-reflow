@@ -1,34 +1,36 @@
 #include "ReflowProgressScreen.hpp"
 
-#include "../reflowprofile/SAC305.hpp" 
-
 void ReflowProgressScreen::refresh() {
   // Check the temperature
-  if (mReflowModel->getOvenTemp() != mLocalModel.getOvenTemp()) {
+  int16_t ovenTemp = mReflowModel->getOvenTemp(); 
+  if (ovenTemp != mLocalModel.getOvenTemp()) {
     // Only bother updating the screen if it's changed - avoids excessive "blinking"
-    updateScreenTempText(mReflowModel->getOvenTemp());
-    mLocalModel.setOvenTemp(mReflowModel->getOvenTemp());
+    updateScreenTempText(ovenTemp);
+    mLocalModel.setOvenTemp(ovenTemp);
+  }
+  // Update the remaining time
+  uint16_t timeRemaining = mReflowModel->determineTimeRemaining();
+  if (timeRemaining != mPreviousSecondsRemaining) {
+    updateScreenTimeRemaining(timeRemaining);
+    mPreviousSecondsRemaining = timeRemaining;
   }
 }
 
 void ReflowProgressScreen::drawScreen() {
   drawAbortButton();
-  drawProfileGraph(new SAC305_(), 20);
+  drawProfileGraph(mReflowModel->getReflowProfile(mReflowModel->getSelectedProfileIndex), mReflowModel->getOvenTemp());
   refresh();
 }
 
 void ReflowProgressScreen::updateScreenTimeRemaining(uint16_t secondsRemaining) {
-  // Only bother updating the screen if it's changed - avoids excessive "blinking"
-  if (secondsRemaining != mPreviousSecondsRemaining) {
-    char text[5] = "";
-    itoa(secondsRemaining, text, 10);
-    strcat(text, TIME_END_C_STRING);
+  char text[5] = "";
+  itoa(secondsRemaining, text, 10);
+  strcat(text, TIME_END_C_STRING);
 
-    updateScreenText(mCurTimeText, text, TIME_TEXT_SIZE, BLACK, TIME_TEXT_COLOUR, TIME_TEXT_X_POS, TIME_TEXT_Y_POS);
+  updateScreenText(mCurTimeText, text, TIME_TEXT_SIZE, BLACK, TIME_TEXT_COLOUR, TIME_TEXT_X_POS, TIME_TEXT_Y_POS);
 
-    mPreviousSecondsRemaining = secondsRemaining;
-    strcpy(mCurTimeText, text);
-  }
+  mPreviousSecondsRemaining = secondsRemaining;
+  strcpy(mCurTimeText, text);
 }
 
 void ReflowProgressScreen::updateScreenTempText(uint16_t temp) {
