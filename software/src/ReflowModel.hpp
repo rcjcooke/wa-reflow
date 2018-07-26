@@ -31,6 +31,8 @@ public:
   ReflowProfile* getReflowProfile(int profileIndex) const {return mReflowProfiles[profileIndex];}
   // Get the user's currently selected profile
   uint8_t getSelectedProfileIndex() const {return mSelectedProfileIndex;}
+  // Get the time that the last reflow starting running
+  long getReflowStartTimeMillis() const {return mReflowStartTimeMillis;}
 
   // Determines what the temperature should be at this point in an active profile
   int16_t determineTargetProfileTempNow();

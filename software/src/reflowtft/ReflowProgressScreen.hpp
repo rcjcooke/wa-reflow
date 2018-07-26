@@ -72,7 +72,9 @@ protected:
   void printYAxisLabel(int16_t y, int16_t* ptxtby, uint16_t temp);
   // Print a label on the graph X Axis
   void printXAxisLabel(int16_t x, int16_t* ptxtbex, uint16_t seconds);
-
+  // Plots the current temperature on the chart
+  void plotCurrentTemp();
+  
 private:
 
   ReflowModel mLocalModel = ReflowModel();
@@ -80,6 +82,9 @@ private:
   char mCurTimeText[5];
   uint16_t mPreviousSecondsRemaining = 0;
   const char* mPreviousState;
+  long mMillisPerPixel = 0;
+  unsigned long mNextGraphPlotPointMillis = 0;
+  float mDegreesPerPixel = 0.0;
 
 };
 
