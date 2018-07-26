@@ -133,7 +133,7 @@ void ReflowProgressScreen::printXAxisLabel(int16_t x, int16_t* ptxtbex, uint16_t
   uint16_t txtw, txth;
 
   // Create the label
-  char label[3];
+  char label[4];
   sprintf(label, "%03d", seconds);
   
   // Add the labels (unless they overlap the previous one)

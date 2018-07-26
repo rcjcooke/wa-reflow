@@ -3,7 +3,7 @@
 
 // Create the global instance
 
-const SerialDebugger_ SerialDebugger = SerialDebugger_();
+SerialDebugger_ SerialDebugger = SerialDebugger_();
 
 SerialDebugger_::SerialDebugger_() : SerialDisplay(SerialDisplayType::ansi_vt100) {
   mNextPrintMillis = millis();

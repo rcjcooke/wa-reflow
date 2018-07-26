@@ -5,7 +5,7 @@
 #include "HashMap.h"
 #include "SerialDisplay.hpp"
 
-const unsigned int MAX_DEBUG_VALUES = 30;
+const unsigned int MAX_DEBUG_VALUES = 15;
 
 class SerialDebugger_ : public SerialDisplay {
 public:
@@ -28,6 +28,6 @@ public:
 
 };
 // Make the instance globally accessible
-extern const SerialDebugger_ SerialDebugger;
+extern SerialDebugger_ SerialDebugger;
 
 #endif // __SERIALDEBUGGER_H_INCLUDED__

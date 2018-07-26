@@ -32,7 +32,7 @@ static const unsigned long USER_SWITCH_REFRESH_PERIOD = 10;
 ReflowModel gReflowModel = ReflowModel();
 ReflowTFT gTFTscreen = ReflowTFT(&gReflowModel, TFT_CS_PIN, TFT_DC_PIN, TFT_RST_PIN);
 MAX6675 gThermocouple = MAX6675();
-SelectionSwitch gEncoderSwitch = SelectionSwitch(&gReflowModel, ENCODER_CHANNEL_A_PIN, ENCODER_CHANNEL_B_PIN, ENCODER_SWITCH_PIN);
+SelectionSwitch gSelectionSwitch = SelectionSwitch(&gReflowModel, ENCODER_CHANNEL_A_PIN, ENCODER_CHANNEL_B_PIN, ENCODER_SWITCH_PIN);
 
 // Update timers
 unsigned long gNextScreenRefresh = millis();
@@ -57,7 +57,7 @@ void setup() {
   // Set up the thermocouple
   initThermocouple();
   // Set up the user input switch
-  gEncoderSwitch.init();
+  gSelectionSwitch.init();
 }
 
 void checkAndRefresh(unsigned long* nextRefreshTimeMillisPtr, unsigned long refreshPeriod, Refreshable* refreshable) {
@@ -72,10 +72,10 @@ void loop() {
   int16_t temp = gThermocouple.readCelsius();
   gReflowModel.setOvenTemp(temp);
 
+  // Check to see if the user has done anything
+  checkAndRefresh(&gSelectionSwitchRefresh, USER_SWITCH_REFRESH_PERIOD, &gSelectionSwitch);
   // Refresh the screen for the user
   checkAndRefresh(&gNextScreenRefresh, SCREEN_REFRESH_PERIOD, &gTFTscreen);
-  // Check to see if the user has done anything
-  checkAndRefresh(&gSelectionSwitchRefresh, USER_SWITCH_REFRESH_PERIOD, &gEncoderSwitch);
-  
+
   delay(200);
 }

@@ -64,7 +64,8 @@ private:
   // The oven temperature
   int16_t mOvenTemp;
   // The list of reflow profiles
-  ReflowProfile* mReflowProfiles[10] = {(SAC305_*) new SAC305_(), new ReflowProfile("Test2", 0, nullptr), new ReflowProfile("Test3", 0, nullptr), new ReflowProfile("Test4", 0, nullptr), new ReflowProfile("Test5", 0, nullptr), new ReflowProfile("Test6", 0, nullptr), new ReflowProfile("Test7", 0, nullptr), new ReflowProfile("Test8", 0, nullptr), new ReflowProfile("Test9", 0, nullptr), new ReflowProfile("Test10", 0, nullptr)};
+  // ReflowProfile* mReflowProfiles[10] = {(SAC305_*) new SAC305_(), new ReflowProfile("Test2", 0, nullptr), new ReflowProfile("Test3", 0, nullptr), new ReflowProfile("Test4", 0, nullptr), new ReflowProfile("Test5", 0, nullptr), new ReflowProfile("Test6", 0, nullptr), new ReflowProfile("Test7", 0, nullptr), new ReflowProfile("Test8", 0, nullptr), new ReflowProfile("Test9", 0, nullptr), new ReflowProfile("Test10", 0, nullptr)};
+  ReflowProfile* mReflowProfiles[10] = {(SAC305_*) new SAC305_()};
   // The number of reflow profiles in memory
   const uint8_t mNumProfiles = 10;
   // The user's selected profile index

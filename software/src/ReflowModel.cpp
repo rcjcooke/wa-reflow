@@ -6,14 +6,16 @@ void ReflowModel::initialiseModel() {
 }
 
 void ReflowModel::moveUserSelection(long int numberMoved) {
-  // Note: While the code below might look clunky, it is safe from interrupts
-  if (mSelectedProfileIndex + numberMoved > mNumProfiles) {
-    mSelectedProfileIndex = mNumProfiles;
-  } else {
-    if (mSelectedProfileIndex + numberMoved < 0) {
-      mSelectedProfileIndex = 0;
+  if (mOvenState == ReflowOvenState::UserSelecting) {
+    // Note: While the code below might look clunky, it is safe from interrupts
+    if (mSelectedProfileIndex + numberMoved > mNumProfiles) {
+      mSelectedProfileIndex = mNumProfiles;
     } else {
-      mSelectedProfileIndex += numberMoved;
+      if (mSelectedProfileIndex + numberMoved < 0) {
+        mSelectedProfileIndex = 0;
+      } else {
+        mSelectedProfileIndex += numberMoved;
+      }
     }
   }
 }

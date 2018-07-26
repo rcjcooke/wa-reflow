@@ -15,6 +15,9 @@ void ReflowTFT::init() {
 void ReflowTFT::refresh() {
   // Check the overall state first as this affects the whole screen
   if (mReflowModel->getOvenState() != localOvenState) {
+    // Clear the current screen
+    mScreen.fillScreen(BLACK);
+    // Draw the new one
     drawScreen();
     localOvenState = mReflowModel->getOvenState();
   }
