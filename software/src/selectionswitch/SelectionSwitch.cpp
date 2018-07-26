@@ -29,6 +29,7 @@ void SelectionSwitch::init() {
   gEncoder = new Encoder(mSR1230.getChannelAPin(), mSR1230.getChannelBPin());
   // Set up the switch pin - the others are handled in Encoder
   pinMode(mSR1230.getSwitchPin(), INPUT);
+  digitalWrite(mSR1230.getSwitchPin(), LOW);
   // Attach the interrupt methods
   attachInterrupt(digitalPinToInterrupt(mSR1230.getChannelAPin()), userTurn, CHANGE);
   attachInterrupt(digitalPinToInterrupt(mSR1230.getSwitchPin()), userSelectButtonPress, RISING);
