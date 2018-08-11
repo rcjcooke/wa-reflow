@@ -5,7 +5,8 @@
 #include "HashMap.h"
 #include "SerialDisplay.hpp"
 
-#define DEBUG true
+#define DEBUG false
+#define MAINTAINMAP false
 
 const unsigned int MAX_DEBUG_VALUES = 20;
 

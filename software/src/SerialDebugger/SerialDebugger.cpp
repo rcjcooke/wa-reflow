@@ -2,9 +2,12 @@
 #include "HashMap.h"
 
 // Create the global instance
+SerialDebugger_ SerialDebugger = SerialDebugger_();
+// SerialDebugger_ SerialDebugger = SerialDebugger_(SerialDisplayType::serialMonitor);
 
-SerialDebugger_ SerialDebugger = SerialDebugger_(SerialDisplayType::serialMonitor);
-
+/********************
+ * Constructors
+ ********************/
 SerialDebugger_::SerialDebugger_(SerialDisplayType displayType) : SerialDisplay(displayType) {
   mNextPrintMillis = millis();
   mStatusValues = HashMap<String, String, MAX_DEBUG_VALUES>();
@@ -12,17 +15,28 @@ SerialDebugger_::SerialDebugger_(SerialDisplayType displayType) : SerialDisplay(
 
 SerialDebugger_::SerialDebugger_() : SerialDebugger_(SerialDisplayType::ansi_vt100) {}
 
+/********************
+ * Methods
+ ********************/
 void SerialDebugger_::updateValue(String variable, void* value) {
   // Convert the pointer into a memory address String
   char memAddressBuffer[65];
   sprintf(memAddressBuffer, "%p", (void *) value);
-  mStatusValues[variable] = String(memAddressBuffer);
-  printUpdate();
+  if (MAINTAINMAP) {
+    mStatusValues[variable] = String(memAddressBuffer);
+    printUpdate();
+  } else {
+    Serial.println(variable + ": " + String(memAddressBuffer));
+  }
 }
 
 void SerialDebugger_::updateValue(String variable, String value) {
-  mStatusValues[variable] = value;
-  printUpdate();
+  if (MAINTAINMAP) {
+    mStatusValues[variable] = value;
+    printUpdate();
+  } else {
+    Serial.println(variable + ": " + value);
+  }
 }
 
 void SerialDebugger_::printUpdate() {

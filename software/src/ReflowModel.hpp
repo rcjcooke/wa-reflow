@@ -48,7 +48,7 @@ public:
   // Sets the start time for the current reflow
   void setRunningReflowStartTimeMillis(unsigned long startTime) {
     mRunningReflowStartTimeMillis = startTime;
-    SerialDebugger.updateValue("mRunningReflowStartTimeMillis", mRunningReflowStartTimeMillis);
+    if (DEBUG) SerialDebugger.updateValue("mRunningReflowStartTimeMillis", mRunningReflowStartTimeMillis);
   }
   // Sets the profile that's being executed
   void setRunningReflowProfile(const ReflowProfile* const reflowProfile) {mRunningReflowProfile = reflowProfile;}
@@ -82,16 +82,15 @@ private:
   static constexpr const char* USER_SELECTING_STRING = "UserSelecting";
   static constexpr const char* REFLOWING_STRING = "Reflowing";
 
-  // The current state of the oven
-  ReflowOvenState mOvenState;
-
-  // The oven temperature
-  int16_t mOvenTemp;
   // The number of reflow profiles in memory
   static constexpr uint8_t mNumProfiles = 1;
   // The list of reflow profiles
-  // ReflowProfile* mReflowProfiles[10] = {(SAC305_*) new SAC305_(), new ReflowProfile("Test2", 0, nullptr), new ReflowProfile("Test3", 0, nullptr), new ReflowProfile("Test4", 0, nullptr), new ReflowProfile("Test5", 0, nullptr), new ReflowProfile("Test6", 0, nullptr), new ReflowProfile("Test7", 0, nullptr), new ReflowProfile("Test8", 0, nullptr), new ReflowProfile("Test9", 0, nullptr), new ReflowProfile("Test10", 0, nullptr)};
-  const ReflowProfile* mReflowProfiles[mNumProfiles] = {&SAC305};
+  ReflowProfile* mReflowProfiles[mNumProfiles] = {&SAC305};
+
+  // The current state of the oven
+  ReflowOvenState mOvenState;
+  // The oven temperature
+  int16_t mOvenTemp;
   // The user's selected profile index
   uint8_t mSelectedProfileIndex = 0;
 

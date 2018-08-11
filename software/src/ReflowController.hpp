@@ -28,7 +28,7 @@ private:
   int16_t determineTargetProfileTempNow();
 
   // Pointer to the model
-  ReflowModel* mReflowModel = NULL;
+  ReflowModel* mReflowModel;
 
 };
 

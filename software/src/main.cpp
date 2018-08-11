@@ -139,6 +139,6 @@ void loop() {
 
   delay(200);
 
-  // temp
+  // TODO: temp for testing - delete the line below once the switch is wired up
   gReflowController.startReflow();
 }
