@@ -5,14 +5,18 @@
 #include "HashMap.h"
 #include "SerialDisplay.hpp"
 
-const unsigned int MAX_DEBUG_VALUES = 15;
+#define DEBUG true
+
+const unsigned int MAX_DEBUG_VALUES = 20;
 
 class SerialDebugger_ : public SerialDisplay {
 public:
   SerialDebugger_();
+  SerialDebugger_(SerialDisplayType displayType);
 
   void updateValue(String variable, String value);
-  
+  void updateValue(String variable, void* value);
+
   void updateValue(String variable, char* value) {updateValue(variable, String(value));}
   void updateValue(String variable, float value) {updateValue(variable, String(value));}
   void updateValue(String variable, int value) {updateValue(variable, String(value));}

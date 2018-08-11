@@ -15,15 +15,13 @@ void ReflowProgressScreen::refresh() {
     mDisplayedOvenTemp = ovenTemp;
   }
   // Update the remaining time
-  uint16_t timeRemaining = mReflowModel->determineTimeRemaining();
+  uint16_t timeRemaining = mReflowModel->getRunningTimeRemainingSeconds();
   if (timeRemaining != mDisplayedSecondsRemaining) {
     updateScreenTimeRemaining(timeRemaining);
     mDisplayedSecondsRemaining = timeRemaining;
   }
   // Update the progress state
-  long durationSinceStart = millis() - mReflowModel->getReflowStartTimeMillis();
-  int reflowZoneIndex = mReflowModel->getReflowProfile()->getZoneIndexByDurationSinceProfileStart(durationSinceStart);
-  ReflowState reflowState = mReflowModel->getReflowProfile()->getZone(reflowZoneIndex)->getReflowState();
+  ReflowState reflowState = mReflowModel->getRunningReflowZone()->getReflowState();
   if (mDisplayedReflowState != reflowState) {
     updateScreenStateText(ReflowZone::translateReflowState(reflowState));
     mDisplayedReflowState = reflowState;
@@ -38,7 +36,7 @@ void ReflowProgressScreen::refresh() {
 void ReflowProgressScreen::drawScreen() {
   drawAbortButton();
   drawProfileGraph(
-      mReflowModel->getReflowProfile(),
+      mReflowModel->getRunningReflowProfile(),
       mReflowModel->getOvenTemp());
   refresh();
 }
@@ -81,7 +79,7 @@ void ReflowProgressScreen::drawAbortButton() {
                            ABORT_BUTTON_FILL_COLOUR, 75, 95);
 }
 
-void ReflowProgressScreen::drawProfileGraph(ReflowProfile *profile,
+void ReflowProgressScreen::drawProfileGraph(const ReflowProfile *profile,
                                             uint16_t startTemp) {
 
   // Draw axes
@@ -91,11 +89,11 @@ void ReflowProgressScreen::drawProfileGraph(ReflowProfile *profile,
                          GRAPH_AXIS_COLOUR);
 
   // Determine scale
-  float pixelsPerDegree = (float)GRAPH_HEIGHT / (float)profile->getMaxTemp();
+  float pixelsPerDegree = (float) GRAPH_HEIGHT / (float) profile->getMaxTemp();
   float pixelsPerSecond =
-      (float)GRAPH_WIDTH / (float)profile->getTotalDuration();
-  mMillisPerPixel = profile->getTotalDuration() * 1000 / GRAPH_WIDTH;
-  mDegreesPerPixel = profile->getMaxTemp() / GRAPH_HEIGHT;
+      (float) GRAPH_WIDTH / (float) profile->getTotalDurationSeconds();
+  mMillisPerPixel = (float) (profile->getTotalDurationSeconds() * 1000) / (float) GRAPH_WIDTH;
+  mDegreesPerPixel = (float) profile->getMaxTemp() / (float) GRAPH_HEIGHT;
 
   // Plot profile
   uint16_t zoneEndTime = 0;
@@ -197,6 +195,6 @@ void ReflowProgressScreen::plotCurrentTemp() {
   mScreen->drawPixel(
       GRAPH_ORIGIN_X +
           mMillisPerPixel *
-              (millis() - mReflowModel->getReflowStartTimeMillis()),
+              (millis() - mReflowModel->getRunningReflowStartTimeMillis()),
       GRAPH_ORIGIN_Y + mDegreesPerPixel * mReflowModel->getOvenTemp(), GREEN);
 }

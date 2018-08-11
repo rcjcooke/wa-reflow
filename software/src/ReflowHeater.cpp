@@ -13,7 +13,7 @@ void ReflowHeater::refresh() {
     // Find out what the temperature is now
     int16_t currentTemp = mReflowModel->getOvenTemp();
     // Find out what the temperature SHOULD be now
-    int16_t targetTemp = mReflowModel->determineTargetProfileTempNow();
+    int16_t targetTemp = mReflowModel->getRunningTargetTemperature();
 
     if (targetTemp - currentTemp > HIGHEST_THRESHOLD_TEMP) {
       turnOnHighPowerElement();

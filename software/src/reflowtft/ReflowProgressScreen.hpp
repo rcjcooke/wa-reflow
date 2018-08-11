@@ -67,7 +67,7 @@ protected:
   void drawAbortButton();
 
   // Draw the planned reflow profile graph
-  void drawProfileGraph(ReflowProfile* profile, uint16_t startTemp);
+  void drawProfileGraph(const ReflowProfile* profile, uint16_t startTemp);
   // Print a label on the graph Y Axis
   void printYAxisLabel(int16_t y, int16_t* ptxtby, uint16_t temp);
   // Print a label on the graph X Axis
@@ -83,7 +83,7 @@ private:
   int16_t mDisplayedOvenTemp = 0; 
   uint16_t mDisplayedSecondsRemaining = 0;
   const char* mPreviousState;
-  long mMillisPerPixel = 0;
+  float mMillisPerPixel = 0.0;
   unsigned long mNextGraphPlotPointMillis = 0;
   float mDegreesPerPixel = 0.0;
   ReflowState mDisplayedReflowState;
