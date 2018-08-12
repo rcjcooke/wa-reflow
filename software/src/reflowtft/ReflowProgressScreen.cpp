@@ -69,6 +69,7 @@ void ReflowProgressScreen::updateScreenStateText(ReflowState newState) {
 
   updateScreenText(mPreviousStateText, state, STATE_TEXT_SIZE, BLACK,
                     STATE_TEXT_COLOUR, STATE_TEXT_X_POS, STATE_TEXT_Y_POS);
+  
   strcpy(mPreviousStateText, state);
 }
 

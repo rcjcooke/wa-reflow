@@ -83,7 +83,7 @@ private:
   ReflowState mDisplayedReflowState = ReflowState::Done;
   char mCurTempText[6];
   char mCurTimeText[5];
-  char* mPreviousStateText;
+  char mPreviousStateText[9];
 
   float mMillisPerPixel = 0.0;
   unsigned long mNextGraphPlotPointMillis = 0;
