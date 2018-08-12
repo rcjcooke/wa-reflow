@@ -14,7 +14,7 @@ public:
   ReflowProgressScreen(ReflowModel* reflowModel, Adafruit_ST7735* screen) : ReflowScreen(reflowModel, screen) {};
 
   // Update the reflow state text display
-  void updateScreenStateText(const char* state);
+  void updateScreenStateText(ReflowState newState);
   // Update the temperature text display
   void updateScreenTempText(uint16_t temp);
   // Update the remaining time text display
@@ -78,15 +78,16 @@ protected:
 private:
 
   // Various current state variables to compare against the model
-  char mCurTempText[6];
-  char mCurTimeText[5];
   int16_t mDisplayedOvenTemp = 0; 
   uint16_t mDisplayedSecondsRemaining = 0;
-  const char* mPreviousState;
+  ReflowState mDisplayedReflowState = ReflowState::Done;
+  char mCurTempText[6];
+  char mCurTimeText[5];
+  char* mPreviousStateText;
+
   float mMillisPerPixel = 0.0;
   unsigned long mNextGraphPlotPointMillis = 0;
   float mDegreesPerPixel = 0.0;
-  ReflowState mDisplayedReflowState;
 
 };
 

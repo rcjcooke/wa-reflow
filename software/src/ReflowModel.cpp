@@ -24,5 +24,6 @@ void ReflowModel::toggleOvenState() {
       mOvenState = ReflowOvenState::UserSelecting;
       break;
   }
+  if (DEBUG) SerialDebugger.updateValue("ReflowModel::toggleOvenState", ReflowModel::translateOvenState(mOvenState));
 }
 

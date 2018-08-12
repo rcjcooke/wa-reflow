@@ -22,8 +22,8 @@ void ReflowProgressScreen::refresh() {
   }
   // Update the progress state
   ReflowState reflowState = mReflowModel->getRunningReflowZone()->getReflowState();
-  if (mDisplayedReflowState != reflowState) {
-    updateScreenStateText(ReflowZone::translateReflowState(reflowState));
+  if (reflowState != mDisplayedReflowState) {
+    updateScreenStateText(reflowState);
     mDisplayedReflowState = reflowState;
   }
   // Update graph
@@ -64,14 +64,12 @@ void ReflowProgressScreen::updateScreenTempText(uint16_t temp) {
   strcpy(mCurTempText, text);
 }
 
-void ReflowProgressScreen::updateScreenStateText(const char *state) {
-  // Only bother updating the screen if it's changed - avoids excessive
-  // "blinking"
-  if (state != mPreviousState) {
-    updateScreenText(mPreviousState, state, STATE_TEXT_SIZE, BLACK,
-                     STATE_TEXT_COLOUR, STATE_TEXT_X_POS, STATE_TEXT_Y_POS);
-    mPreviousState = state;
-  }
+void ReflowProgressScreen::updateScreenStateText(ReflowState newState) {
+  const char* state = ReflowZone::translateReflowState(newState);
+
+  updateScreenText(mPreviousStateText, state, STATE_TEXT_SIZE, BLACK,
+                    STATE_TEXT_COLOUR, STATE_TEXT_X_POS, STATE_TEXT_Y_POS);
+  strcpy(mPreviousStateText, state);
 }
 
 void ReflowProgressScreen::drawAbortButton() {

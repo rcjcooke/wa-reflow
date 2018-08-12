@@ -70,11 +70,7 @@ public:
   char* getName() const {return mName;}
   const uint8_t getNumZones() const {return mNumZones;}
   ReflowZone* getZone(int zone) const {return &mZones[zone];}
-  uint16_t getTotalDurationSeconds() const {
-    if (DEBUG) SerialDebugger.updateValue("mTotalDurationSeconds (getter)", mTotalDurationSeconds);
-    if (DEBUG) SerialDebugger.updateValue("getter this", (void *) this);
-    return mTotalDurationSeconds;
-  }
+  uint16_t getTotalDurationSeconds() const {return mTotalDurationSeconds;}
   uint16_t getMaxTemp() const {return mMaxTemp;}  
 
   int getZoneIndexByDurationSinceProfileStart(unsigned long durationSinceStartMillis) {
@@ -106,16 +102,14 @@ private:
     for (int i=0; i<mNumZones; i++) {
       ReflowZone z = mZones[i];
       uint16_t zoneDuration = z.getDurationSeconds();
-      if (DEBUG) SerialDebugger.updateValue("zoneDuration", zoneDuration);
       mTotalDurationSeconds += zoneDuration;
-      if (DEBUG) SerialDebugger.updateValue("mTotalDurationSeconds", mTotalDurationSeconds);
-      if (DEBUG) SerialDebugger.updateValue("populateCalcs this", (void *) this);
 
       mMaxTemp = max(mMaxTemp, z.getTargetTemp());
       z.setStartTimeSeconds(zoneStart);
       z.setStartTemp(zoneStartTemp);
-      z.setTargetTempGradient((z.getTargetTemp() - zoneStartTemp)/zoneDuration);
-      if (i+1 < mNumZones) z.setNextZone(&mZones[i]);
+      z.setTargetTempGradient((float) (z.getTargetTemp() - zoneStartTemp) / (float) zoneDuration);
+
+      if (i+1 < mNumZones) z.setNextZone(&mZones[i+1]);
       zoneStart += zoneDuration;
       zoneStartTemp = z.getTargetTemp();
     }

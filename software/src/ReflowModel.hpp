@@ -46,24 +46,15 @@ public:
   // Update the user's selection - sign indicates direction
   void moveUserSelection(long int numberMoved);
   // Sets the start time for the current reflow
-  void setRunningReflowStartTimeMillis(unsigned long startTime) {
-    mRunningReflowStartTimeMillis = startTime;
-    if (DEBUG) SerialDebugger.updateValue("mRunningReflowStartTimeMillis", mRunningReflowStartTimeMillis);
-  }
+  void setRunningReflowStartTimeMillis(unsigned long startTime) {mRunningReflowStartTimeMillis = startTime;}
   // Sets the profile that's being executed
   void setRunningReflowProfile(const ReflowProfile* const reflowProfile) {mRunningReflowProfile = reflowProfile;}
   // Sets the profile zone that's being executed
   void setRunningReflowZone(ReflowZone* reflowZone) {mRunningReflowZone = reflowZone;}
   // Set the number of seconds left in the current profile
-  void setRunningTimeRemainingSeconds(uint16_t timeRemaining) {
-    mRunningTimeRemainingSeconds = timeRemaining;
-    if (DEBUG) SerialDebugger.updateValue("mRunningTimeRemainingSeconds", mRunningTimeRemainingSeconds);
-  }
+  void setRunningTimeRemainingSeconds(uint16_t timeRemaining) {mRunningTimeRemainingSeconds = timeRemaining;}
   // The temperature target now
-  void setRunningTargetTemperature(int16_t tempTarget) {
-    mRunningTargetTemperature = tempTarget;
-    if (DEBUG) SerialDebugger.updateValue("mRunningTargetTemperature", mRunningTargetTemperature);
-  }
+  void setRunningTargetTemperature(int16_t tempTarget) {mRunningTargetTemperature = tempTarget;}
    
   // Helper method: Translates an oven state into a human readable string
   static const char* translateOvenState(ReflowOvenState ovenState) {
