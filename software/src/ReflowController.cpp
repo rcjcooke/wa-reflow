@@ -17,31 +17,35 @@ void ReflowController::refresh() {
     float remainingTimeSeconds = (float) remainingTimeMillis / (float) 1000.0;
     mReflowModel->setRunningTimeRemainingSeconds(remainingTimeSeconds);
     
-    // Update current zone
+    // Update the current target temperature
     ReflowZone* zone = mReflowModel->getRunningReflowZone();
-    uint16_t zoneStart = zone->getStartTimeSeconds();
+    uint16_t zoneStart = mReflowModel->getRunningReflowZoneStartTimeSeconds();
     uint16_t zoneDuration = zone->getDurationSeconds();
-    
+    uint16_t zoneStartTemp = mReflowModel->getRunningReflowZoneStartTemp();
+    uint16_t zoneTargetTemp = zone->getTargetTemp();
+
+    uint16_t timeInZone = durationSinceStartMillis / 1000 - zoneStart;
+    float zoneTimeRatio = (float) timeInZone / (float) zoneDuration;
+    float runningTargetTemp = zoneTimeRatio * (zoneTargetTemp - zoneStartTemp) + zoneStartTemp;
+    mReflowModel->setRunningTargetTemperature(runningTargetTemp);
+
+    // Update current zone
     if (durationSinceStartMillis > (unsigned long) (zoneStart + zoneDuration) * 1000) {
-      if (zone->getNextZone()) {
-        mReflowModel->setRunningReflowZone(zone->getNextZone());
+      int zoneIndex = mReflowModel->getRunningReflowZoneIndex();
+      if (zoneIndex+1 < mReflowModel->getRunningReflowProfile()->getNumZones()) {
+        mReflowModel->setRunningReflowZoneStartTimeSeconds(mReflowModel->getRunningReflowZoneStartTimeSeconds() + zoneDuration);
+        mReflowModel->setRunningReflowZoneStartTemp(zoneTargetTemp);
+        mReflowModel->setRunningReflowZoneIndex(zoneIndex+1);
       } else {
         // Reached the end of the profile
         mReflowModel->toggleOvenState();
       }
     }
 
-    uint16_t timeInZone = durationSinceStartMillis / 1000 - zone->getStartTimeSeconds();
-    float runningTargetTemp = (float) (timeInZone / zone->getDurationSeconds()) * (zone->getTargetTemp() - zone->getStartTemp()) + zone->getStartTemp();
-
-    if (DEBUG) SerialDebugger.updateValue("ReflowController::refresh: startTemp", zone->getStartTemp());
-    if (DEBUG) SerialDebugger.updateValue("ReflowController::refresh: targetTemp", zone->getTargetTemp());
-    if (DEBUG) SerialDebugger.updateValue("ReflowController::refresh: timeInZone", timeInZone);
-    if (DEBUG) SerialDebugger.updateValue("ReflowController::refresh: durationSeconds", zone->getDurationSeconds());
-    if (DEBUG) SerialDebugger.updateValue("ReflowController::refresh: runningTargetTemp", runningTargetTemp);
-    
-    // Update the current target temperature
-    mReflowModel->setRunningTargetTemperature(runningTargetTemp);
+    if (DEBUG) SerialDebugger.updateValue("ReflowController::refresh profile", mReflowModel->getRunningReflowProfile()->toString());
+    if (DEBUG) SerialDebugger.updateValue("ReflowController::refresh zone", ReflowZone::translateReflowState(zone->getReflowState()));
+    if (DEBUG) SerialDebugger.updateValue("ReflowController::refresh numZones", mReflowModel->getRunningReflowProfile()->getNumZones());
+    if (DEBUG) SerialDebugger.updateValue("ReflowController::refresh runningTargetTemp", runningTargetTemp);
 
   }
 }
@@ -49,15 +53,14 @@ void ReflowController::refresh() {
 void ReflowController::startReflow() {
   if (mReflowModel->getOvenState() == ReflowOvenState::UserSelecting) {
     mReflowModel->setRunningReflowProfile(mReflowModel->getReflowProfile(mReflowModel->getSelectedProfileIndex()));
-    mReflowModel->setRunningReflowZone(mReflowModel->getRunningReflowProfile()->getZone(0));
+    mReflowModel->setRunningReflowZoneIndex(0);
     mReflowModel->setRunningReflowStartTimeMillis(millis());
-    // Set the start temperature of the first zone in the active profile - used for determining temperature profile
-    mReflowModel->getRunningReflowZone()->setStartTemp(mReflowModel->getOvenTemp());
+    mReflowModel->setRunningReflowZoneStartTemp(mReflowModel->getOvenTemp());
+    mReflowModel->setRunningReflowZoneStartTimeSeconds(0);
 
     if (DEBUG) SerialDebugger.updateValue("Running Profile", mReflowModel->getRunningReflowProfile()->getName());
     if (DEBUG) SerialDebugger.updateValue("Running Reflow Zone", ReflowZone::translateReflowState(mReflowModel->getRunningReflowZone()->getReflowState()));
     if (DEBUG) SerialDebugger.updateValue("Running Reflow Start Time", mReflowModel->getRunningReflowStartTimeMillis());
-    if (DEBUG) SerialDebugger.updateValue("Running Reflow Start Temp", mReflowModel->getRunningReflowZone()->getStartTemp());
 
     mReflowModel->toggleOvenState();
   }

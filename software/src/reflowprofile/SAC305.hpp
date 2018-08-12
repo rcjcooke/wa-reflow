@@ -4,10 +4,10 @@
 #include "ReflowProfile.hpp"
 
 static ReflowZone zones[] = {{ReflowState::Preheat, 1.5, 150, 90},
-                             {ReflowState::Soak, 1.5, 175, 90},
-                             {ReflowState::Ramp, 1.5, 217, 30},
-                             {ReflowState::Reflow, 1.5, 249, 30},
-                             {ReflowState::Cooling, 1.5, 217, 30}};
+                      {ReflowState::Soak, 1.5, 175, 90},
+                      {ReflowState::Ramp, 1.5, 217, 30},
+                      {ReflowState::Reflow, 1.5, 249, 30},
+                      {ReflowState::Cooling, 1.5, 217, 30}};
 
 class SAC305_ : public ReflowProfile {
 

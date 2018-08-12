@@ -23,17 +23,23 @@ public:
   // Get the number of profiles this oven knows about
   const uint8_t getNumProfiles() const {return mNumProfiles;}
   // Get a specific reflow profile that this oven supports
-  const ReflowProfile* const getReflowProfile(int profileIndex) const {return mReflowProfiles[profileIndex];}
+  ReflowProfile* getReflowProfile(int profileIndex) const {return mReflowProfiles[profileIndex];}
   // Get the user's currently selected profile
   uint8_t getSelectedProfileIndex() const {return mSelectedProfileIndex;}
   // Get the time that the last reflow starting running
   unsigned long getRunningReflowStartTimeMillis() const {return mRunningReflowStartTimeMillis;}
   // Get the user selected reflow profile
-  const ReflowProfile* getRunningReflowProfile() const {return mRunningReflowProfile;}
+  ReflowProfile* getRunningReflowProfile() const {return mRunningReflowProfile;}
+  // Gets the index of the profile zone that's being executed
+  int getRunningReflowZoneIndex() {return mRunningReflowZoneIdx;}
   // Get the reflow zone currently being executed
-  ReflowZone* getRunningReflowZone() const {return mRunningReflowZone;}
+  ReflowZone* getRunningReflowZone() const {return mRunningReflowProfile->getZone(mRunningReflowZoneIdx);}
   // Returns the number of seconds left in the current profile
   uint16_t getRunningTimeRemainingSeconds() const {return mRunningTimeRemainingSeconds;}
+  // Gets the start time in seconds from the beginning of the profile of the current reflow zone
+  uint16_t getRunningReflowZoneStartTimeSeconds() const {return mRunningReflowZoneStartTimeSeconds;}
+  // The starting temperature of the active reflow zone
+  int16_t getRunningReflowZoneStartTemp() const {return mRunningReflowZoneStartTemp;}
   // The temperature target now
   int16_t getRunningTargetTemperature() const {return mRunningTargetTemperature;}
 
@@ -48,11 +54,15 @@ public:
   // Sets the start time for the current reflow
   void setRunningReflowStartTimeMillis(unsigned long startTime) {mRunningReflowStartTimeMillis = startTime;}
   // Sets the profile that's being executed
-  void setRunningReflowProfile(const ReflowProfile* const reflowProfile) {mRunningReflowProfile = reflowProfile;}
+  void setRunningReflowProfile(ReflowProfile* reflowProfile) {mRunningReflowProfile = reflowProfile;}
   // Sets the profile zone that's being executed
-  void setRunningReflowZone(ReflowZone* reflowZone) {mRunningReflowZone = reflowZone;}
+  void setRunningReflowZoneIndex(int index) {mRunningReflowZoneIdx = index;}
   // Set the number of seconds left in the current profile
   void setRunningTimeRemainingSeconds(uint16_t timeRemaining) {mRunningTimeRemainingSeconds = timeRemaining;}
+  // Sets the start time in seconds from the beginning of the profile of the current reflow zone
+  void setRunningReflowZoneStartTimeSeconds(uint16_t startTime) {mRunningReflowZoneStartTimeSeconds = startTime;}
+  // The starting temperature of the active reflow zone
+  void setRunningReflowZoneStartTemp(int16_t startTemp) {mRunningReflowZoneStartTemp = startTemp;}
   // The temperature target now
   void setRunningTargetTemperature(int16_t tempTarget) {mRunningTargetTemperature = tempTarget;}
    
@@ -88,13 +98,17 @@ private:
   // The system start time of the current reflow
   unsigned long mRunningReflowStartTimeMillis = 0;
   // The reflow profile we're executing
-  const ReflowProfile* mRunningReflowProfile = NULL;
-  // The zone of the profile we're currently in
-  ReflowZone* mRunningReflowZone = NULL;
+  ReflowProfile* mRunningReflowProfile = NULL;
+  // The index of the zone of the profile we're currently in
+  int mRunningReflowZoneIdx = 0;
   // The target temperature at the current time
   int16_t mRunningTargetTemperature = 0;
+  // The starting temperature of the active reflow zone
+  int16_t mRunningReflowZoneStartTemp = 0;
   // Time remaining in the current profile
   uint16_t mRunningTimeRemainingSeconds = 0;
+  // The start time in seconds from the beginning of the profile of the current reflow zone
+  uint16_t mRunningReflowZoneStartTimeSeconds = 0;
 
 };
 

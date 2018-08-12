@@ -6,7 +6,7 @@
 #include "SerialDisplay.hpp"
 
 #define DEBUG true
-#define MAINTAINMAP false
+#define MAINTAINMAP true
 
 const unsigned int MAX_DEBUG_VALUES = 20;
 

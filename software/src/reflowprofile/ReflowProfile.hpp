@@ -2,118 +2,38 @@
 #define __REFLOWPROFILE_H_INCLUDED__
 
 #include <Arduino.h>
-#include "../SerialDebugger/SerialDebugger.hpp"
-
-enum class ReflowState : uint8_t {
-  Preheat,
-  Soak,
-  Ramp,
-  Reflow,
-  Cooling,
-  Done
-};
-
-class ReflowZone {
-public:
-  ReflowZone(const ReflowState reflowState, const float maxTempGradient,
-             const int16_t targetTemp, const uint16_t durationSeconds)
-      : mReflowState(reflowState), mMaxTempGradient(maxTempGradient),
-        mTargetTemp(targetTemp), mDurationSeconds(durationSeconds) {}
-
-  const ReflowState getReflowState() const {return mReflowState;}
-  const float getMaxTempGradient() const {return mMaxTempGradient;}
-  const int16_t getTargetTemp() const {return mTargetTemp;}
-  const uint16_t getDurationSeconds() const {return mDurationSeconds;}
-  uint16_t getStartTimeSeconds() const {return mStartTimeSeconds;}
-  int16_t getStartTemp() const {return mStartTemp;}
-  float getTargetTempGradient() const {return mTargetTempGradient;}
-  ReflowZone* getNextZone() const {return mNextZone;}
-
-  void setStartTimeSeconds(uint16_t startTime) {mStartTimeSeconds = startTime;}
-  void setStartTemp(int16_t startTemp) {mStartTemp = startTemp;}
-  void setTargetTempGradient(float targetTempGradient) {mTargetTempGradient = targetTempGradient;}
-  void setNextZone(ReflowZone* nextZone) {mNextZone = nextZone;}
-
-  static const char* translateReflowState(ReflowState reflowState) {
-    switch(reflowState) {
-      case ReflowState::Preheat: return "Preheat";
-      case ReflowState::Soak: return "Soak";
-      case ReflowState::Ramp: return "Ramp";
-      case ReflowState::Reflow: return "Reflow";
-      case ReflowState::Cooling: return "Cooling";
-      case ReflowState::Done: return "Done";
-      default: return "Unknown";
-    }
-  }
-
-private:
-  const ReflowState mReflowState;
-  const float mMaxTempGradient;
-  const int16_t mTargetTemp;
-  const uint16_t mDurationSeconds;
-  uint16_t mStartTimeSeconds = 0;
-  int16_t mStartTemp = 0;
-  float mTargetTempGradient = 0; // degrees per second
-  ReflowZone* mNextZone = NULL;
-
-};
+#include "ReflowZone.hpp"
 
 class ReflowProfile {
 
 public:
 
-  ReflowProfile(char* name, uint8_t numZones, ReflowZone zones[]) : mName(name), mNumZones(numZones), mZones(zones) {
+  ReflowProfile(char* name, const uint8_t numZones, ReflowZone* zonesArray) : mName(name), mNumZones(numZones), mZonesArray(zonesArray) {
     populateCalcs();
   }
 
   // Annoyingly this has to be non-const to avoid Adafruit_gfx library getTextBounds issue
   char* getName() const {return mName;}
   const uint8_t getNumZones() const {return mNumZones;}
-  ReflowZone* getZone(int zone) const {return &mZones[zone];}
+  ReflowZone* getZone(int zone) const {return &(mZonesArray[zone]);}
   uint16_t getTotalDurationSeconds() const {return mTotalDurationSeconds;}
   uint16_t getMaxTemp() const {return mMaxTemp;}  
 
-  int getZoneIndexByDurationSinceProfileStart(unsigned long durationSinceStartMillis) {
-    unsigned long zoneStartMillis = 0;
-    for (int i=0; i<mNumZones; i++) {
-      ReflowZone z = mZones[i];
-      unsigned long zoneDurationMillis = z.getDurationSeconds() * 1000;
-      if (zoneDurationMillis + zoneStartMillis >= durationSinceStartMillis) {
-        return i;
-      }
-      zoneStartMillis += zoneDurationMillis;
-    }
-    return mNumZones;
-  }
+  int getZoneIndexByDurationSinceProfileStart(unsigned long durationSinceStartMillis);
 
+  String toString();
+  
 protected:
   // Annoyingly this has to be non-const to avoid Adafruit_gfx library getTextBounds issue
   char* mName;
   const uint8_t mNumZones;
-  ReflowZone* mZones;
+  ReflowZone* mZonesArray;
   uint16_t mTotalDurationSeconds;
   int16_t mMaxTemp;
 
 private:
 
-  void populateCalcs() {
-    uint16_t zoneStart = 0;
-    int16_t zoneStartTemp = 0;
-    for (int i=0; i<mNumZones; i++) {
-      ReflowZone z = mZones[i];
-      uint16_t zoneDuration = z.getDurationSeconds();
-      mTotalDurationSeconds += zoneDuration;
-
-      mMaxTemp = max(mMaxTemp, z.getTargetTemp());
-      z.setStartTimeSeconds(zoneStart);
-      z.setStartTemp(zoneStartTemp);
-      z.setTargetTempGradient((float) (z.getTargetTemp() - zoneStartTemp) / (float) zoneDuration);
-
-      if (i+1 < mNumZones) z.setNextZone(&mZones[i+1]);
-      zoneStart += zoneDuration;
-      zoneStartTemp = z.getTargetTemp();
-    }
-  }
+  void populateCalcs();
 };
 
 #endif // __REFLOWPROFILE_H_INCLUDED__
