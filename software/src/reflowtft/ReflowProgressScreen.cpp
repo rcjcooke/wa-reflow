@@ -89,10 +89,9 @@ void ReflowProgressScreen::drawProfileGraph(const ReflowProfile *profile,
 
   // Determine scale
   float pixelsPerDegree = (float) GRAPH_HEIGHT / (float) profile->getMaxTemp();
-  float pixelsPerSecond =
-      (float) GRAPH_WIDTH / (float) profile->getTotalDurationSeconds();
-  mMillisPerPixel = (float) (profile->getTotalDurationSeconds() * 1000) / (float) GRAPH_WIDTH;
-  mDegreesPerPixel = (float) profile->getMaxTemp() / (float) GRAPH_HEIGHT;
+  float pixelsPerSecond = (float) GRAPH_WIDTH / (float) profile->getTotalDurationSeconds();
+  mMillisPerPixel = 1 / pixelsPerSecond * 1000;
+  mDegreesPerPixel = 1 / pixelsPerDegree;
 
   // Plot profile
   uint16_t zoneEndTime = 0;
@@ -191,9 +190,15 @@ void ReflowProgressScreen::printXAxisLabel(int16_t x, int16_t *ptxtbex,
 }
 
 void ReflowProgressScreen::plotCurrentTemp() {
+  int16_t deltaX = (float) (millis() - mReflowModel->getRunningReflowStartTimeMillis()) / mMillisPerPixel;
+  int16_t deltaY = (float) mReflowModel->getOvenTemp() / mDegreesPerPixel;
+
+  SerialDebugger.updateValue("mMillisPerPixel", mMillisPerPixel);
+  SerialDebugger.updateValue("mDegreesPerPixel", mDegreesPerPixel);
+  SerialDebugger.updateValue("deltaX", deltaX);
+  SerialDebugger.updateValue("deltaY", deltaY);
+
   mScreen->drawPixel(
-      GRAPH_ORIGIN_X +
-          mMillisPerPixel *
-              (millis() - mReflowModel->getRunningReflowStartTimeMillis()),
-      GRAPH_ORIGIN_Y + mDegreesPerPixel * mReflowModel->getOvenTemp(), GREEN);
+      GRAPH_ORIGIN_X + deltaX,
+      GRAPH_ORIGIN_Y - deltaY, GREEN);
 }
