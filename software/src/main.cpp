@@ -137,8 +137,4 @@ void loop() {
   // Make sure the heater is doing sensible things
   checkAndRefresh(&gPreviousHeaterRefresh, HEATER_REFRESH_PERIOD, &gReflowHeater);
 
-  delay(200);
-
-  // TODO: temp for testing - delete the line below once the switch is wired up
-  gReflowController.startReflow();
 }
