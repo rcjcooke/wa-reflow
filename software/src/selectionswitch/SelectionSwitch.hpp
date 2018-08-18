@@ -12,6 +12,10 @@ typedef void (*voidFuncPtr)(void);
 class SelectionSwitch : public Refreshable {
 
 public:
+
+  // Time to wait after button press before accepting a new one
+  static const unsigned long DEBOUNCE_DELAY_MILLIS = 50;
+
   SelectionSwitch(ReflowModel *reflowModel, ReflowController *reflowController,
                   voidFuncPtr userTurnInterruptDispatch,
                   voidFuncPtr userSelectButtonPressInterruptDispatch,
@@ -39,6 +43,8 @@ private:
   voidFuncPtr mUserSelectButtonPressInterruptDispatchFunctionPtr;
 
   long int mEncoderPreviousPosition;
+  unsigned long mLastButtonPress = 0;
+
 };
 
 #endif // __SELECTIONSWITCH_H_INCLUDED__

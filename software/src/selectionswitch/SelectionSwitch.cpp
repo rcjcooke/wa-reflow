@@ -31,10 +31,15 @@ void SelectionSwitch::refresh() {
     mEncoderPreviousPosition = positionNow;
   }
   if (mSR1230.isButtonPressesWaitingToAction()) {
-    if (mReflowModel->getOvenState() == ReflowOvenState::UserSelecting) {
-      mReflowController->startReflow();
-    } else {
-      mReflowController->abortReflow();
+    unsigned long curTime = millis();
+    // Make sure this isn't a button bounce
+    if (curTime - mLastButtonPress > DEBOUNCE_DELAY_MILLIS) {
+      if (mReflowModel->getOvenState() == ReflowOvenState::UserSelecting) {
+        mReflowController->startReflow();
+      } else {
+        mReflowController->abortReflow();
+      }
+      mLastButtonPress = curTime;
     }
     mSR1230.buttonPressActioned();
   }

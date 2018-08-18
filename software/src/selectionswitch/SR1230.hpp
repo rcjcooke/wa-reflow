@@ -7,6 +7,7 @@
 class SR1230 {
 
 public:
+
   SR1230(uint8_t pinA, uint8_t pinB, uint8_t pinS)
       : mChannelAPin(pinA), mChannelBPin(pinB), mSwitchPin(pinS),
         mEncoder(Encoder(pinA, pinB)){};
